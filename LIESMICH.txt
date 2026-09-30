@@ -1,0 +1,20 @@
+StrategiemitKI – komplette Website (Stand September 2026)
+=========================================================
+
+ALLE Dateien dieses Ordners gehören direkt ins Hauptverzeichnis Ihres Webspace
+(keine Unterordner) – genau so, wie Ihre Seite schon aufgebaut ist.
+
+1. VOR DEM HOCHLADEN in index.html anpassen (Stellen mit "HIER ANPASSEN"):
+   - Link zum Handbuch bei der Verkaufsplattform (IHR-SHOP-LINK-HANDBUCH)
+   - Link zur KI-Anamnese (IHR-SHOP-LINK-ANAMNESE)
+   - E-Mail-Adresse im Kontaktbereich (derzeit kontakt@strategiemitki.de)
+   In impressum.html und datenschutz.html: [E-MAIL EINTRAGEN] ersetzen.
+
+2. HOCHLADEN: Alle Dateien per SFTP oder STRATO-Dateimanager ins
+   Hauptverzeichnis laden und vorhandene Dateien überschreiben.
+
+3. NICHT auf den Webspace: Handbuch (Teil 4, PDF + Word) und KI-Anamnese
+   (Excel + PDF) – diese gehören nur zur Verkaufsplattform.
+
+4. Nach dem Hochladen testen: Downloads, Videos (auch am Handy), Favicon
+   (ggf. Strg+F5), Impressum und Datenschutz.
