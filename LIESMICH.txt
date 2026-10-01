@@ -1,20 +1,20 @@
-StrategiemitKI – komplette Website (Stand September 2026)
-=========================================================
+StrategiemitKI – Website Version 2 (KI-Wertarchitektur)
+=======================================================
 
-ALLE Dateien dieses Ordners gehören direkt ins Hauptverzeichnis Ihres Webspace
-(keine Unterordner) – genau so, wie Ihre Seite schon aufgebaut ist.
+NEU: quickcheck.html (kostenloser KI-Quick-Check, läuft komplett im Browser),
+wertarchitektur.svg / .png (Methoden-Grafik), überarbeitete index.html.
 
-1. VOR DEM HOCHLADEN in index.html anpassen (Stellen mit "HIER ANPASSEN"):
-   - Link zum Handbuch bei der Verkaufsplattform (IHR-SHOP-LINK-HANDBUCH)
-   - Link zur KI-Anamnese (IHR-SHOP-LINK-ANAMNESE)
-   - E-Mail-Adresse im Kontaktbereich (derzeit kontakt@strategiemitki.de)
-   In impressum.html und datenschutz.html: [E-MAIL EINTRAGEN] ersetzen.
+Alle Dateien gehören direkt ins Hauptverzeichnis (keine Unterordner).
+Diese index.html ist ab jetzt die EINZIGE Master-Datei – alte Versionen
+(z. B. index(1).html) bitte löschen, nicht parallel pflegen.
 
-2. HOCHLADEN: Alle Dateien per SFTP oder STRATO-Dateimanager ins
-   Hauptverzeichnis laden und vorhandene Dateien überschreiben.
+VOR DEM HOCHLADEN anpassen (im Code mit "HIER ANPASSEN" markiert):
+ - E-Mail-Adresse (derzeit kontakt@strategiemitki.de, mehrfach in index.html)
+ - Shop-Link KI-Anamnese (IHR-SHOP-LINK-ANAMNESE)
+ - Shop-Link Handbuch (IHR-SHOP-LINK-HANDBUCH)
+ - impressum.html und datenschutz.html: [E-MAIL EINTRAGEN] ersetzen
+ - datenschutz.html: Hosting-Abschnitt muss zum tatsächlichen Hosting passen
+   (STRATO oder GitHub Pages)
 
-3. NICHT auf den Webspace: Handbuch (Teil 4, PDF + Word) und KI-Anamnese
-   (Excel + PDF) – diese gehören nur zur Verkaufsplattform.
-
-4. Nach dem Hochladen testen: Downloads, Videos (auch am Handy), Favicon
-   (ggf. Strg+F5), Impressum und Datenschutz.
+VOR DEM VERKAUF prüfen lassen: Widerrufsbelehrung (widerruf.html),
+AGB, Preisangaben, Zahlungsanbieter.
