@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<!--
+  KIONEXT · Bereich auf strategiemitki.de
+  Ablage: kionext.html im Hauptverzeichnis (ersetzt die bisherige kionext.html)
+  Vor dem Hochladen: CONTACT_MAIL im Skript unten auf die echte Adresse setzen.
+-->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KIONEXT – Starten. Bauen. Skalieren.</title>
+<link rel="canonical" href="https://strategiemitki.de/kionext.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KIONEXT – Starten. Bauen. Skalieren.">
+<meta property="og:description" content="Die Umsetzungs- und Enablement-Company für KI im Mittelstand. Eine Marke im Verbund mit StrategiemitKI.">
+<meta property="og:url" content="https://strategiemitki.de/kionext.html">
+<meta name="theme-color" content="#040D1A">
+<meta name="description" content="KIONEXT verbindet KI-Strategie, Governance und digitale Mitarbeiter für den Mittelstand – von der Analyse bis zur Umsetzung.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20128%20128%22%3E%3Crect%20width%3D%22128%22%20height%3D%22128%22%20rx%3D%2228%22%20fill%3D%22%230A1530%22/%3E%3Cg%20transform%3D%22translate%2824%2C24%29%20scale%281.25%29%22%20fill%3D%22none%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%2211%22%3E%3Cpath%20d%3D%22M14%2011V53%22%20stroke%3D%22%231F6BFF%22/%3E%3Cpath%20d%3D%22M34%2034L50%2053%22%20stroke%3D%22%23E6007E%22/%3E%3Cpath%20d%3D%22M50%2011L14%2053%22%20stroke%3D%22%237B2FE0%22/%3E%3C/g%3E%3C/svg%3E">
+<style>
+@font-face{font-family:"Poppins";src:url(poppins-500.woff) format("woff");font-weight:500;font-display:swap}
+:root{
+  --bg:#061426; --bg-deep:#040D1A; --panel:#0C1C2E; --panel-2:#10243A;
+  --line:rgba(120,170,230,.16); --line-strong:rgba(120,170,230,.32);
+  --text:#E9EEF5; --muted:#93A3B8; --dim:#6B7C93;
+  --blue:#3B82FF; --blue-2:#1F6BFF; --purple:#7B2FE0; --magenta:#E6007E; --magenta-2:#F2188C;
+  --display:"Sora", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --body:"Segoe UI","Helvetica Neue",Arial,system-ui,-apple-system,sans-serif;
+  --r-s:6px; --r-m:12px; --r-l:20px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:dark;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --bg:#061426; --text:#E9EEF5; } }
+:root[data-theme="dark"]{ --bg:#061426; --text:#E9EEF5; }
+html{ scroll-behavior:smooth; scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px); background:var(--bg-deep); }
+*,*::before,*::after{ box-sizing:inherit; }
+body{ margin:0; background:var(--bg); color:var(--text); font-family:var(--body); font-size:17px; line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+img,svg{ max-width:100%; }
+a{ color:inherit; }
+:focus-visible{ outline:2px solid var(--blue); outline-offset:3px; border-radius:4px; }
+.wrap{ width:min(1180px, 100% - 40px); margin-inline:auto; }
+h1,h2,h3,h4{ font-family:var(--display); font-weight:600; line-height:1.12; letter-spacing:-.02em; margin:0; }
+h2{ font-size:clamp(30px, 4.2vw, 48px); max-width:18ch; }
+h3{ font-size:21px; letter-spacing:-.01em; }
+p{ margin:0; }
+.lead{ font-size:clamp(18px, 1.8vw, 21px); color:var(--muted); max-width:58ch; }
+.muted{ color:var(--muted); }
+section{ padding:clamp(72px, 10vw, 128px) 0; position:relative; }
+.sec-head{ display:grid; gap:18px; margin-bottom:clamp(36px, 5vw, 56px); }
+
+/* Buttons */
+.btn{ display:inline-flex; align-items:center; gap:10px; font:600 15px/1 var(--body); padding:15px 22px; border-radius:999px; text-decoration:none; border:1px solid transparent; cursor:pointer; transition:background .2s, border-color .2s, transform .2s; }
+.btn-primary{ background:var(--magenta); color:#fff; }
+.btn-primary:hover{ background:var(--magenta-2); }
+.btn-ghost{ border-color:var(--line-strong); color:var(--text); background:transparent; }
+.btn-ghost:hover{ border-color:var(--blue); }
+.btn:active{ transform:translateY(1px); }
+
+/* Header */
+.site-head{ position:sticky; top:env(safe-area-inset-top,0px); z-index:50; background:rgba(4,13,26,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+.head-in{ display:flex; align-items:center; justify-content:space-between; height:70px; gap:24px; }
+.brand{ display:flex; align-items:center; gap:11px; text-decoration:none; }
+.brand svg{ display:block; }
+.nav{ display:flex; gap:28px; align-items:center; }
+.nav a{ text-decoration:none; font-size:15px; color:var(--muted); transition:color .2s; }
+.nav a:hover{ color:var(--text); }
+.nav .btn{ color:#fff; padding:11px 18px; font-size:14px; }
+.menu-btn{ display:none; background:none; border:1px solid var(--line-strong); color:var(--text); border-radius:8px; padding:9px 12px; font:500 14px var(--body); }
+@media (max-width:940px){
+  .menu-btn{ display:block; }
+  .nav{ position:absolute; left:0; right:0; top:70px; flex-direction:column; align-items:stretch; gap:0; background:var(--bg-deep); border-bottom:1px solid var(--line); padding:8px 20px 20px; display:none; }
+  .nav.open{ display:flex; }
+  .nav a{ padding:14px 0; border-bottom:1px solid var(--line); font-size:17px; color:var(--text); }
+  .nav .btn{ margin-top:16px; justify-content:center; border-bottom:0; }
+}
+
+/* Hero */
+.hero{ padding:clamp(56px, 9vw, 112px) 0 clamp(64px, 8vw, 96px); overflow:hidden;
+  background:
+    radial-gradient(900px 500px at 85% 10%, rgba(59,130,255,.13), transparent 60%),
+    radial-gradient(700px 420px at 100% 80%, rgba(230,0,126,.10), transparent 60%),
+    var(--bg-deep); }
+.hero-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center; }
+.hero h1{ font-size:clamp(44px, 7.4vw, 92px); letter-spacing:-.035em; line-height:1.0; }
+.hero .lead{ margin-top:26px; }
+.hero-cta{ display:flex; flex-wrap:wrap; gap:12px; margin-top:36px; }
+.hero-note{ margin-top:28px; font-size:14px; color:var(--dim); }
+.hero-note a{ color:var(--muted); }
+.path{ background:linear-gradient(180deg, rgba(16,36,58,.7), rgba(12,28,46,.4)); border:1px solid var(--line); border-radius:var(--r-l); padding:28px 26px; }
+.path-title{ font-size:14px; color:var(--muted); margin-bottom:10px; }
+.path svg{ display:block; width:100%; height:auto; }
+.path-legend{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:8px; }
+.path-legend div{ font-size:13px; color:var(--muted); line-height:1.4; }
+.path-legend strong{ display:block; color:var(--text); font:600 15px var(--display); margin-bottom:2px; }
+@media (max-width:940px){ .hero-grid{ grid-template-columns:1fr; } }
+
+/* Pillars */
+.pillars{ display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.pillar{ padding:34px 30px 36px; border-left:1px solid var(--line); }
+.pillar:first-child{ border-left:0; padding-left:0; }
+.pillar h3{ margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+.pillar h3 i{ width:9px; height:9px; border-radius:50%; background:var(--blue); display:inline-block; }
+.pillar:nth-child(2) h3 i{ background:var(--purple); }
+.pillar:nth-child(3) h3 i{ background:var(--magenta); }
+.pillar p{ color:var(--muted); font-size:16px; }
+.pillar a{ display:inline-block; margin-top:16px; font-size:15px; color:var(--blue); text-decoration:none; }
+.pillar a:hover{ text-decoration:underline; }
+@media (max-width:820px){ .pillars{ grid-template-columns:1fr; } .pillar{ border-left:0; border-top:1px solid var(--line); padding-left:0; } .pillar:first-child{ border-top:0; } }
+
+/* Situations */
+.situations{ display:grid; grid-template-columns:1fr 1.2fr; gap:56px; align-items:start; }
+.sit-list{ list-style:none; padding:0; margin:0; }
+.sit-list li{ padding:18px 0 18px 34px; border-bottom:1px solid var(--line); position:relative; font-size:18px; }
+.sit-list li::before{ content:""; position:absolute; left:2px; top:27px; width:16px; height:2px; background:var(--magenta); }
+@media (max-width:820px){ .situations{ grid-template-columns:1fr; gap:24px; } }
+
+/* Strategy */
+.alt{ background:var(--bg-deep); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; counter-reset:step; }
+.step{ background:var(--panel); border:1px solid var(--line); border-radius:var(--r-m); padding:28px; position:relative; }
+.step-num{ font:600 44px/1 var(--display); color:transparent; -webkit-text-stroke:1px var(--blue); margin-bottom:22px; display:block; }
+.step h3{ margin-bottom:12px; }
+.step ul{ margin:0; padding:0; list-style:none; color:var(--muted); font-size:15.5px; }
+.step li{ padding:6px 0; border-top:1px solid var(--line); }
+.step li:first-child{ border-top:0; }
+.step:not(:last-child)::after{ content:""; position:absolute; right:-21px; top:50px; width:22px; height:1px; background:var(--line-strong); }
+.deliver{ margin-top:48px; display:grid; grid-template-columns:1fr 1.5fr; gap:40px; padding-top:40px; border-top:1px solid var(--line); }
+.chips{ display:flex; flex-wrap:wrap; gap:10px; }
+.chip{ border:1px solid var(--line-strong); border-radius:999px; padding:9px 16px; font-size:15px; background:rgba(12,28,46,.6); }
+@media (max-width:900px){ .steps{ grid-template-columns:1fr; } .step::after{ display:none; } .deliver{ grid-template-columns:1fr; gap:20px; } }
+
+/* Wertanalyse-Varianten */
+.variants{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:56px; }
+.variant{ border:1px solid var(--line); border-radius:var(--r-m); padding:26px; background:rgba(12,28,46,.55); display:flex; flex-direction:column; gap:12px; }
+.variant.feat{ border-color:var(--purple); box-shadow:inset 0 3px 0 var(--purple); }
+.variant h4{ font-size:20px; }
+.variant p{ color:var(--muted); font-size:15.5px; }
+.variant ul{ margin:0; padding-left:18px; color:var(--text); font-size:15px; }
+.variant li{ padding:3px 0; }
+.va-head{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:end; gap:20px; padding-top:40px; border-top:1px solid var(--line); margin-top:48px; }
+@media (max-width:900px){ .variants{ grid-template-columns:1fr; } }
+/* Angebotstreppe */
+.ladder{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+.ladder li{ display:grid; grid-template-columns:44px 1fr auto; gap:16px; align-items:center; padding:18px 0; border-bottom:1px solid var(--line); }
+.ladder .n{ font:600 18px var(--display); color:var(--dim); }
+.ladder h4{ font-size:17px; margin-bottom:2px; }
+.ladder p{ color:var(--muted); font-size:15px; }
+.brandtag{ font-size:12.5px; border-radius:999px; padding:5px 11px; white-space:nowrap; border:1px solid var(--line-strong); color:var(--muted); }
+.brandtag.k{ border-color:rgba(230,0,126,.55); color:#FF8CC8; }
+@media (max-width:600px){ .ladder li{ grid-template-columns:32px 1fr; } .ladder .brandtag{ grid-column:2; justify-self:start; } }
+.workshop{ margin-top:28px; padding:20px 22px; border:1px solid var(--line-strong); border-radius:var(--r-m); background:var(--panel); }
+.workshop h4{ font-size:17px; margin-bottom:6px; }
+.workshop p{ color:var(--muted); font-size:15.5px; }
+
+/* Avatare */
+.av-grid{ display:grid; grid-template-columns:280px 1fr; gap:28px; }
+.av-tabs{ display:flex; flex-direction:column; gap:6px; }
+.av-tab{ text-align:left; background:transparent; border:1px solid transparent; color:var(--muted); padding:16px 18px; border-radius:var(--r-m); font:500 17px var(--body); cursor:pointer; transition:background .2s, color .2s, border-color .2s; }
+.av-tab:hover{ color:var(--text); }
+.av-tab[aria-selected="true"]{ background:var(--panel); border-color:var(--line-strong); color:var(--text); box-shadow:inset 3px 0 0 var(--magenta); }
+.av-tab small{ display:block; font-size:13px; color:var(--dim); margin-top:3px; }
+.av-panel{ background:var(--panel); border:1px solid var(--line); border-radius:var(--r-l); padding:30px; }
+.av-panel h3{ font-size:26px; margin-bottom:8px; }
+.bp{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-m); overflow:hidden; margin-top:24px; }
+.bp > div{ background:var(--panel-2); padding:18px 18px 20px; }
+.bp dt{ font:600 14px var(--display); color:var(--blue); margin-bottom:6px; }
+.bp dd{ margin:0; font-size:15px; color:var(--text); line-height:1.5; }
+.bp > div:nth-child(4) dt{ color:var(--magenta-2); }
+.av-foot{ margin-top:40px; display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.av-foot div{ border-top:1px solid var(--line-strong); padding-top:16px; }
+.av-foot h4{ font-size:17px; margin-bottom:6px; }
+.av-foot p{ color:var(--muted); font-size:15.5px; }
+@media (max-width:900px){ .av-grid{ grid-template-columns:1fr; } .av-tabs{ flex-direction:row; overflow-x:auto; padding-bottom:4px; } .av-tab{ flex:0 0 auto; } .av-tab small{ display:none; } .bp{ grid-template-columns:1fr 1fr; } .av-foot{ grid-template-columns:1fr; } }
+@media (max-width:520px){ .bp{ grid-template-columns:1fr; } .av-panel{ padding:22px; } }
+
+/* Portfolio */
+.filters{ display:flex; flex-wrap:wrap; gap:8px; margin-bottom:28px; }
+.filter{ background:transparent; border:1px solid var(--line-strong); color:var(--muted); border-radius:999px; padding:9px 16px; font:500 15px var(--body); cursor:pointer; }
+.filter[aria-pressed="true"]{ background:var(--text); color:var(--bg-deep); border-color:var(--text); }
+.pf{ border-top:1px solid var(--line); }
+.pf-item{ border-bottom:1px solid var(--line); }
+.pf-item[hidden]{ display:none; }
+.pf-btn{ width:100%; display:grid; grid-template-columns:1.1fr 1.6fr auto; gap:24px; align-items:center; background:none; border:0; color:var(--text); padding:26px 0; cursor:pointer; text-align:left; font:inherit; }
+.pf-btn h3{ font-size:clamp(20px, 2.4vw, 26px); }
+.pf-btn .sum{ color:var(--muted); font-size:16px; }
+.pf-tags{ display:flex; gap:6px; }
+.tag{ font-size:12.5px; border-radius:999px; padding:4px 10px; border:1px solid var(--line-strong); color:var(--muted); white-space:nowrap; }
+.tag.d1{ border-color:rgba(59,130,255,.5); color:#8DB4FF; }
+.tag.d2{ border-color:rgba(255,255,255,.35); color:#DDE5EF; }
+.tag.d3{ border-color:rgba(230,0,126,.55); color:#FF7DC0; }
+.pf-plus{ width:30px; height:30px; border:1px solid var(--line-strong); border-radius:50%; display:grid; place-items:center; transition:transform .25s; flex:0 0 auto; }
+.pf-item.open .pf-plus{ transform:rotate(45deg); border-color:var(--magenta); }
+.pf-right{ display:flex; align-items:center; gap:18px; justify-content:flex-end; }
+.pf-body{ display:none; grid-template-columns:1.1fr 1.6fr auto; gap:24px; padding:0 0 30px; }
+.pf-item.open .pf-body{ display:grid; }
+.pf-body .pb{ grid-column:2; display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+.pf-body h4{ font:600 14px var(--display); color:var(--blue); margin-bottom:6px; }
+.pf-body p, .pf-body li{ font-size:15.5px; color:var(--muted); }
+.pf-body ul{ margin:0; padding-left:18px; }
+@media (max-width:820px){
+  .pf-btn{ grid-template-columns:1fr auto; } .pf-btn .sum{ grid-column:1 / -1; grid-row:2; }
+  .pf-right .pf-tags{ display:none; }
+  .pf-body{ grid-template-columns:1fr; } .pf-body .pb{ grid-column:1; grid-template-columns:1fr; }
+}
+.formats{ margin-top:72px; }
+.formats h3{ margin-bottom:20px; }
+.fmt-table{ overflow-x:auto; border:1px solid var(--line); border-radius:var(--r-m); }
+.fmt-table table{ width:100%; border-collapse:collapse; min-width:620px; }
+.fmt-table th, .fmt-table td{ text-align:left; padding:16px 20px; border-bottom:1px solid var(--line); font-size:15.5px; vertical-align:top; }
+.fmt-table th{ font:600 14px var(--display); color:var(--muted); background:var(--panel); }
+.fmt-table tr:last-child td{ border-bottom:0; }
+.fmt-table td:first-child{ font-weight:600; white-space:nowrap; }
+.fmt-table td{ color:var(--muted); }
+.fmt-table td:first-child{ color:var(--text); }
+
+/* Check */
+.check{ background:
+  radial-gradient(700px 400px at 0% 0%, rgba(42,119,198,.16), transparent 60%),
+  radial-gradient(600px 380px at 100% 100%, rgba(230,0,126,.10), transparent 60%), var(--bg-deep);
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.check-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:28px; align-items:start; }
+.dims{ display:grid; gap:12px; }
+.dim{ background:var(--panel); border:1px solid var(--line); border-radius:var(--r-m); padding:18px 20px; }
+.dim-top{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; }
+.dim h3{ font-size:18px; }
+.dim .q{ font-size:14.5px; color:var(--muted); margin-top:2px; }
+.dim output{ font:600 14px var(--body); color:var(--blue); white-space:nowrap; }
+.dim input[type=range]{ width:100%; margin-top:14px; accent-color:var(--blue); height:28px; }
+.scale{ display:flex; justify-content:space-between; font-size:12px; color:var(--dim); }
+.result{ position:sticky; top:calc(env(safe-area-inset-top,0px) + 90px); background:linear-gradient(180deg, var(--panel-2), var(--panel)); border:1px solid var(--line-strong); border-radius:var(--r-l); padding:28px; }
+.score-row{ display:flex; align-items:flex-end; gap:16px; margin:6px 0 4px; }
+.score{ font:600 64px/1 var(--display); letter-spacing:-.03em; }
+.score small{ font-size:22px; color:var(--dim); }
+.stage{ font:600 20px var(--display); color:var(--magenta-2); padding-bottom:8px; }
+.stage-desc{ color:var(--muted); font-size:15.5px; }
+.heat{ display:grid; gap:9px; margin:24px 0; }
+.heat-row{ display:grid; grid-template-columns:110px 1fr 28px; gap:12px; align-items:center; font-size:14px; }
+.heat-row span:first-child{ color:var(--muted); }
+.bar{ height:10px; background:rgba(255,255,255,.06); border-radius:99px; overflow:hidden; }
+.bar i{ display:block; height:100%; border-radius:99px; transition:width .35s ease, background .35s; }
+.heat-row b{ text-align:right; font-weight:600; }
+.recs h4{ font-size:16px; margin-bottom:10px; }
+.recs ol{ margin:0; padding-left:20px; }
+.recs li{ font-size:15px; color:var(--muted); padding:4px 0; }
+.result .btn{ width:100%; justify-content:center; margin-top:22px; }
+.result .fine{ font-size:12.5px; color:var(--dim); margin-top:12px; }
+@media (max-width:940px){ .check-grid{ grid-template-columns:1fr; } .result{ position:static; } }
+
+/* Enablement */
+.en-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
+.modules{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+.modules li{ display:grid; grid-template-columns:44px 1fr; gap:8px; padding:15px 0; border-bottom:1px solid var(--line); font-size:16.5px; }
+.modules li span{ font:600 15px var(--display); color:var(--blue); }
+.notice{ margin-top:28px; border:1px solid rgba(230,0,126,.35); background:rgba(230,0,126,.06); border-radius:var(--r-m); padding:18px 20px; font-size:15px; color:#E4C9D8; }
+.notice strong{ color:#fff; }
+.cert{ margin-top:28px; }
+.cert h4{ font-size:17px; margin-bottom:10px; }
+@media (max-width:900px){ .en-grid{ grid-template-columns:1fr; gap:36px; } }
+
+/* Insights */
+.ins-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.paper{ display:flex; flex-direction:column; justify-content:space-between; min-height:210px; padding:24px; border-radius:var(--r-m); text-decoration:none; background:linear-gradient(160deg, #0E2238 0%, #071629 100%); border:1px solid var(--line); position:relative; overflow:hidden; transition:border-color .2s; }
+.paper:hover{ border-color:var(--blue); }
+.paper::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:3px; background:linear-gradient(var(--blue-2), var(--purple), var(--magenta)); }
+.paper h3{ font-size:19px; line-height:1.25; }
+.paper p{ font-size:14.5px; color:var(--muted); margin-top:10px; }
+.paper .src{ font-size:13px; color:var(--dim); margin-top:18px; }
+.funnel{ margin-top:48px; display:flex; flex-wrap:wrap; align-items:center; gap:10px; padding:22px 24px; border:1px dashed var(--line-strong); border-radius:var(--r-m); }
+.funnel .f{ font-size:15px; padding:8px 14px; border-radius:999px; background:var(--panel); border:1px solid var(--line); }
+.funnel .f.hl{ border-color:var(--blue); color:#C4D7FF; }
+.funnel .f.end{ background:var(--magenta); border-color:var(--magenta); color:#fff; }
+.funnel svg{ flex:0 0 auto; }
+@media (max-width:900px){ .ins-grid{ grid-template-columns:1fr 1fr; } }
+@media (max-width:600px){ .ins-grid{ grid-template-columns:1fr; } }
+
+/* About */
+.about{ display:grid; grid-template-columns:1fr 1fr; gap:56px; }
+.vm{ display:grid; gap:28px; }
+.vm div{ padding-left:20px; border-left:2px solid var(--blue); }
+.vm div:nth-child(2){ border-left-color:var(--magenta); }
+.vm h3{ margin-bottom:8px; }
+.vm p{ color:var(--muted); }
+.principles{ list-style:none; margin:0; padding:0; }
+.principles li{ font:500 clamp(22px, 2.6vw, 30px)/1.25 var(--display); letter-spacing:-.015em; padding:14px 0; border-bottom:1px solid var(--line); color:var(--text); }
+.principles li em{ font-style:normal; color:var(--dim); }
+@media (max-width:900px){ .about{ grid-template-columns:1fr; gap:36px; } }
+
+/* Contact */
+.contact{ background:var(--bg-deep); border-top:1px solid var(--line); }
+.ct-grid{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+form{ display:grid; gap:14px; }
+label{ display:grid; gap:6px; font-size:14px; color:var(--muted); }
+input[type=text], input[type=email], select, textarea{ width:100%; background:var(--panel); border:1px solid var(--line-strong); border-radius:var(--r-s); color:var(--text); font:16px var(--body); padding:13px 14px; }
+input:focus, select:focus, textarea:focus{ outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(59,130,255,.18); }
+textarea{ min-height:120px; resize:vertical; }
+.row2{ display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.form-msg{ font-size:14px; color:var(--dim); }
+.form-msg.err{ color:#FF7DC0; }
+@media (max-width:820px){ .ct-grid{ grid-template-columns:1fr; gap:36px; } .row2{ grid-template-columns:1fr; } }
+
+/* Footer */
+footer{ padding:48px 0 40px; border-top:1px solid var(--line); background:var(--bg-deep); font-size:14px; color:var(--dim); }
+.ft{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:24px; align-items:center; }
+.ft nav{ display:flex; gap:22px; flex-wrap:wrap; }
+.ft a, .ft button{ color:var(--muted); text-decoration:none; background:none; border:0; font:inherit; cursor:pointer; padding:0; }
+.ft a:hover, .ft button:hover{ color:var(--text); }
+
+dialog{ background:var(--panel); color:var(--text); border:1px solid var(--line-strong); border-radius:var(--r-l); max-width:560px; width:calc(100% - 32px); padding:30px; }
+dialog::backdrop{ background:rgba(2,8,18,.7); }
+dialog h3{ margin-bottom:14px; }
+dialog p{ color:var(--muted); font-size:15.5px; margin-bottom:12px; }
+
+/* Hero line animation */
+.draw{ stroke-dasharray:1000; stroke-dashoffset:1000; animation:draw 2.2s .3s cubic-bezier(.6,.1,.2,1) forwards; }
+.pop{ opacity:0; animation:pop .5s forwards; }
+@keyframes draw{ to{ stroke-dashoffset:0; } }
+@keyframes pop{ to{ opacity:1; } }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  .draw{ animation:none; stroke-dashoffset:0; }
+  .pop{ animation:none; opacity:1; }
+  .bar i, .pf-plus{ transition:none; }
+}
+.claim .cw{ color:#FFFFFF; } .claim .cm{ color:var(--magenta); } .claim .cb{ color:var(--blue-2); }
+.xray{ margin:4px 0 10px; color:var(--muted); font-size:15px; } .xray strong{ color:#fff; background:linear-gradient(90deg,#1F6BFF,#7B2FE0,#E6007E); -webkit-background-clip:text; background-clip:text; color:transparent; }
+.step-claim{ font:600 15px var(--display); letter-spacing:.02em; margin:-10px 0 6px; }
+.xr{ margin:56px 0 8px; padding:32px; border:1px solid var(--line); border-radius:var(--r-m); background:var(--panel); }
+.xr-head{ display:grid; gap:12px; max-width:68ch; margin-bottom:28px; }
+.xr-grid{ display:grid; grid-template-columns:1.3fr 1fr; gap:40px; }
+.xr-sub{ font:600 14px var(--display); color:var(--blue); margin-bottom:12px; text-transform:uppercase; letter-spacing:.06em; }
+.xr-dims{ list-style:none; margin:0; padding:0; border-top:1px solid var(--line); }
+.xr-dims li{ padding:14px 0; border-bottom:1px solid var(--line); color:var(--muted); font-size:15px; }
+.xr-dims b{ display:block; color:var(--text); font-weight:600; margin-bottom:2px; }
+@media (max-width:860px){ .xr{ padding:22px; } .xr-grid{ grid-template-columns:1fr; gap:28px; } }
+
+
+/* ---------- Bereichs-Umschalter StrategiemitKI | KIONEXT ---------- */
+.bereiche{background:#030A16;border-bottom:1px solid rgba(200,215,235,.10)}
+.bereiche .in{width:min(1180px,100%);margin-inline:auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:42px}
+.bereiche nav{display:flex;gap:6px}
+.bereiche a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#A3B2C6;padding:6px 14px;border-radius:999px;font:500 .9rem/1 "Poppins",Arial,Helvetica,sans-serif;letter-spacing:-.005em}
+.bereiche a:hover{color:#fff}
+.bereiche a[aria-current="page"]{color:#fff;background:rgba(255,255,255,.07);box-shadow:inset 0 0 0 1px rgba(200,215,235,.22)}
+.bereiche a i{width:7px;height:7px;border-radius:50%;display:inline-block}
+.bereiche a.smk i{background:#2BD3AE}
+.bereiche a.knx i{background:linear-gradient(135deg,#1F6BFF,#7B2FE0,#E6007E)}
+.bereiche .hint{color:#71839B;font:400 .85rem "Poppins",Arial,Helvetica,sans-serif}
+@media (max-width:600px){.bereiche .hint{display:none}.bereiche .in{justify-content:center;padding:0 16px}}
+
+/* Grafiken Wertarchitektur (Haus und Weg) */
+.gfx{display:block;width:100%;height:auto}.gfx svg{display:block;width:100%;height:auto}
+.gfx-m{display:none}
+@media (max-width:760px){.gfx-w{display:none}.gfx-m{display:block}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.wa-block{margin:8px 0 56px}
+.wa-block .wa-head{display:grid;gap:10px;max-width:64ch;margin-bottom:24px}
+.wa-block .wa-head h3{font-size:clamp(22px,2.6vw,28px)}
+</style>
+</head>
+<body>
+<div class="bereiche"><div class="in"><nav aria-label="Bereiche"><a class="smk" href="index.html"><i></i>StrategiemitKI</a><a class="knx" href="kionext.html" aria-current="page"><i></i>KIONEXT</a></nav><span class="hint">Wissen und Umsetzung unter einem Dach</span></div></div>
+
+<header class="site-head">
+  <div class="wrap head-in">
+    <a class="brand" href="#top" aria-label="KIONEXT Startseite"><svg width="140" height="30" viewBox="0 0 372 80" role="img" aria-label="KIONEXT"><defs>
+<linearGradient id="ghd" gradientUnits="userSpaceOnUse" x1="8" y1="8" x2="56" y2="56"><stop offset="0" stop-color="#1F6BFF"/><stop offset=".55" stop-color="#7B2FE0"/><stop offset="1" stop-color="#E6007E"/></linearGradient>
+<linearGradient id="shd" gradientUnits="userSpaceOnUse" x1="0" y1="6" x2="0" y2="58"><stop offset="0" stop-color="#1F6BFF"/><stop offset="1" stop-color="#3D4BF0"/></linearGradient>
+<linearGradient id="xhd" gradientUnits="userSpaceOnUse" x1="203" y1="0" x2="233" y2="0"><stop offset="0" stop-color="#1F6BFF"/><stop offset=".5" stop-color="#7B2FE0"/><stop offset="1" stop-color="#E6007E"/></linearGradient>
+<clipPath id="chd"><rect x="-10" y="0" width="400" height="40"/></clipPath>
+</defs><g transform="scale(1.25)"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="11">
+<path d="M14 11V53" stroke="url(#shd)"/>
+<path d="M34 34L50 53" stroke="url(#ghd)"/>
+<path d="M50 11L14 53" stroke="url(#ghd)"/>
+</g></g><g transform="translate(104,18) scale(0.95)"><g clip-path="url(#chd)" fill="none" stroke-width="6" stroke-linecap="butt" stroke-linejoin="miter"><path d="M3 -5V45M34 -3L3 25M15 15L36 43" stroke="#E9EEF5"/><path d="M50 -5V45" stroke="#E9EEF5"/><circle cx="84" cy="20" r="17" stroke="#E9EEF5"/><path d="M120 45V0L146 40V-5" stroke="#E9EEF5" stroke-linejoin="miter"/><path d="M190 3H164V37H190M164 20H184" stroke="#E9EEF5"/><path d="M203 -2L233 42M233 -2L203 42" stroke="url(#xhd)"/><path d="M245 3H277M261 3V45" stroke="#E9EEF5"/></g></g></svg></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menü</button>
+    <nav class="nav" id="nav" aria-label="Hauptnavigation">
+      <a href="#wertarchitektur">Wertarchitektur</a>
+      <a href="#avatare">KI-Avatare</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#check">Quick-Check</a>
+      <a href="#insights">Akademie</a>
+      <a href="#ueber">Über uns</a>
+      <a class="btn btn-primary" href="#wertanalyse">KI-Wertanalyse anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="claim"><span class="cw">Starten.</span> <span class="cm">Bauen.</span> <span class="cb">Skalieren.</span></h1>
+      <p class="lead">KIONEXT ist die Umsetzungs- und Enablement-Company für KI im Mittelstand. Wir bringen Künstliche Intelligenz in Ihr Unternehmen: mit klaren Entscheidungen, belastbaren Roadmaps, digitalen Mitarbeitern und befähigten Teams – für mittelständische Unternehmen, die KI nicht nur testen, sondern wirksam einsetzen wollen.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#check">KI-Quick-Check starten</a>
+        <a class="btn btn-ghost" href="#wertanalyse">Zur KI-Wertanalyse</a>
+      </div>
+      <p class="hero-note">Lieber erst lesen? Fakten, Whitepaper und Werkzeuge gibt es auf <a href="index.html">StrategiemitKI</a>, unserer KI-Akademie. Fakten. Klarheit. Vorsprung.</p>
+    </div>
+
+    <div class="path" aria-label="Die KI-Wertarchitektur: Wert erkennen, planen, heben">
+      <p class="path-title">Die KI-Wertarchitektur</p>
+      <svg viewBox="0 0 460 250" role="img" aria-labelledby="pathT">
+        <title id="pathT">Ein Pfad führt von verstreuten Einzeltools über Wert erkennen, Wert planen und Wert heben zu einem gesteuerten KI-Betriebsmodell.</title>
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1">
+            <stop offset="0" stop-color="#1F6BFF"/><stop offset=".55" stop-color="#7B2FE0"/><stop offset="1" stop-color="#E6007E"/>
+          </linearGradient>
+        </defs>
+        <!-- scattered tools -->
+        <g fill="none" stroke="#6B7C93" stroke-width="1.4" opacity=".8">
+          <rect x="16" y="62" width="16" height="16" rx="4"/>
+          <rect x="44" y="34" width="12" height="12" rx="3"/>
+          <rect x="30" y="160" width="14" height="14" rx="3"/>
+          <rect x="58" y="196" width="10" height="10" rx="3"/>
+          <rect x="10" y="118" width="12" height="12" rx="3"/>
+        </g>
+        <path class="draw" d="M24 124 C 80 124, 90 190, 150 180 S 220 70, 270 92 S 340 170, 380 120 S 420 70, 440 70" fill="none" stroke="url(#g1)" stroke-width="3" stroke-linecap="round"/>
+        <g font-family="Instrument Sans, sans-serif" font-size="13" fill="#E9EEF5">
+          <g class="pop" style="animation-delay:.9s"><circle cx="150" cy="180" r="7" fill="#061426" stroke="#1F6BFF" stroke-width="2.5"/><text x="150" y="212" text-anchor="middle">Erkennen</text></g>
+          <g class="pop" style="animation-delay:1.4s"><circle cx="270" cy="92" r="7" fill="#061426" stroke="#7B2FE0" stroke-width="2.5"/><text x="270" y="68" text-anchor="middle">Planen</text></g>
+          <g class="pop" style="animation-delay:1.9s"><circle cx="380" cy="120" r="7" fill="#061426" stroke="#B0189F" stroke-width="2.5"/><text x="380" y="150" text-anchor="middle">Heben</text></g>
+          <g class="pop" style="animation-delay:2.4s"><circle cx="440" cy="70" r="9" fill="#E6007E"/><text x="440" y="44" text-anchor="end" fill="#FF7DC0" font-weight="600">Next</text></g>
+        </g>
+      </svg>
+      <div class="path-legend">
+        <div><strong>Wert erkennen</strong>X-Ray auf sechs Ebenen, Use Cases</div>
+        <div><strong>Wert planen</strong>Roadmap, Governance, Business Cases</div>
+        <div><strong>Wert heben</strong>Piloten, Avatare, Enablement</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<div class="wrap">
+  <div class="pillars">
+    <div class="pillar">
+      <h3><i></i>Strategie</h3>
+      <p>Mit der KI-Wertanalyse erkennen Sie, wo KI bei Ihnen Wert schafft – und bekommen eine Roadmap, die Ihre Geschäftsführung tragen kann.</p>
+      <a href="#wertarchitektur">Zur KI-Wertarchitektur</a>
+    </div>
+    <div class="pillar">
+      <h3><i></i>KI-Avatare</h3>
+      <p>Digitale Mitarbeiter mit klarer Rolle, freigegebenem Wissen und definierten Grenzen – für Service, Vertrieb, HR und IT.</p>
+      <a href="#avatare">Zu den KI-Avataren</a>
+    </div>
+    <div class="pillar">
+      <h3><i></i>Enablement</h3>
+      <p>Workshops und AI-Literacy-Programme, mit denen Sie KI-Kompetenz nach Art. 4 EU AI Act strukturiert aufbauen.</p>
+      <a href="#enablement">Zum Enablement</a>
+    </div>
+  </div>
+</div>
+
+<!-- SITUATIONS -->
+<section>
+  <div class="wrap situations">
+    <div class="sec-head">
+      <h2>Wo Unternehmen heute stehen.</h2>
+      <p class="lead">Die meisten unserer Gespräche beginnen nicht mit Technologie, sondern mit einer dieser Ausgangslagen.</p>
+    </div>
+    <ul class="sit-list">
+      <li>Viele Einzeltools, aber keine Gesamtstrategie.</li>
+      <li>Unsicherheit zu EU AI Act, Datenschutz und Governance.</li>
+      <li>Mitarbeitende experimentieren unkoordiniert mit generativer KI.</li>
+      <li>Ein hoher Anteil repetitiver Wissensarbeit bindet Fachkräfte.</li>
+      <li>Der Wunsch nach messbaren Quick Wins statt langwieriger Großprojekte.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- WERTARCHITEKTUR -->
+<section id="wertarchitektur" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 style="max-width:none">Die KI&#8209;Wertarchitektur.</h2>
+      <p class="lead">Unsere Methode für KI, die sich rechnet. Sie prüft sechs Ebenen, die zusammenpassen müssen, und führt in drei Schritten aus einer Hand von der Analyse zur laufenden Lösung.</p>
+    </div>
+
+    <div class="wa-block" id="ebenen">
+      <div class="wa-head">
+        <h3>Sechs Ebenen, die zusammenpassen müssen</h3>
+        <p class="muted">KI lohnt sich nur, wenn alles ineinandergreift: der wirtschaftliche Wert, die Abläufe, die Aufgabe der KI, die Daten, die Menschen und die Steuerung. An diesen sechs Ebenen setzen Quick-Check und X-Ray an. Auch die Whitepaper unserer Akademie StrategiemitKI sind danach aufgebaut.</p>
+      </div>
+      <ul class="sr-only">
+      <li>WERT: Wo entsteht wirtschaftlicher Nutzen?</li>
+      <li>ABLÄUFE: Welche Prozesse und Engpässe?</li>
+      <li>INTELLIGENZ: Welche Aufgabe übernimmt die KI?</li>
+      <li>DATEN: Welche Daten und welches Wissen?</li>
+      <li>MENSCH: Wer arbeitet wie mit KI – und trägt Verantwortung?</li>
+      <li>STEUERUNG: Welche Regeln, Kennzahlen und Kontrollen sichern den Erfolg?</li>
+    </ul>
+      <div class="gfx gfx-w"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" role="img" aria-label="Die KI-Wertarchitektur: Wert als Dach, getragen von Abläufen, Intelligenz und Daten, auf dem Fundament aus Mensch und Steuerung"><defs>
+<radialGradient id="hw-bg" cx="50%" cy="0%" r="115%"><stop offset="0" stop-color="#0E2347"/><stop offset=".55" stop-color="#071431"/><stop offset="1" stop-color="#040C1F"/></radialGradient>
+<radialGradient id="hw-glowO" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#E6007E" stop-opacity="0.35"/><stop offset="1" stop-color="#E6007E" stop-opacity="0"/></radialGradient>
+<radialGradient id="hw-glowC" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#6F7BFF" stop-opacity=".16"/><stop offset="1" stop-color="#6F7BFF" stop-opacity="0"/></radialGradient>
+<linearGradient id="hw-roofSolid" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6FBF"/><stop offset=".6" stop-color="#E6007E"/><stop offset="1" stop-color="#A0179E"/></linearGradient>
+<linearGradient id="hw-roofShine" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<linearGradient id="hw-edge" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1200" y2="0"><stop offset="0" stop-color="#5B95FF"/><stop offset="1" stop-color="#4C8DFF"/></linearGradient>
+<linearGradient id="hw-glassD" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5B95FF" stop-opacity=".22"/><stop offset="1" stop-color="#1B2A6B" stop-opacity=".12"/></linearGradient>
+<linearGradient id="hw-pilL" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6F7BFF"/><stop offset="1" stop-color="#3A2FB8"/></linearGradient>
+<linearGradient id="hw-shine" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".18"/><stop offset=".4" stop-color="#FFFFFF" stop-opacity="0"/></linearGradient>
+<linearGradient id="hw-slabMD" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2F6BFF" stop-opacity=".32"/><stop offset="1" stop-color="#2F6BFF" stop-opacity=".14"/></linearGradient>
+<linearGradient id="hw-slabSD" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5B95FF" stop-opacity=".18"/><stop offset="1" stop-color="#0E2347" stop-opacity=".3"/></linearGradient>
+<linearGradient id="hw-slabML" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E4FD8"/><stop offset="1" stop-color="#3B82FF"/></linearGradient>
+<linearGradient id="hw-slabSL" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0B1F3F"/><stop offset="1" stop-color="#17345F"/></linearGradient>
+<linearGradient id="hw-beam" gradientUnits="userSpaceOnUse" x1="0" y1="566" x2="0" y2="262"><stop offset="0" stop-color="#5B95FF" stop-opacity=".1"/><stop offset=".5" stop-color="#5B95FF"/><stop offset="1" stop-color="#F2389A"/></linearGradient>
+<pattern id="hw-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#3AA8FF" stroke-opacity="0.05"/></pattern>
+<filter id="hw-blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="18"/></filter>
+<filter id="hw-soft" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+<filter id="hw-drop" x="-15%" y="-15%" width="130%" height="150%"><feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#0B1F3F" flood-opacity="0.0"/></filter>
+</defs>
+<style>
+.hw-flow{stroke-dasharray:5 13;animation:hw-flow 1.8s linear infinite}
+@keyframes hw-flow{to{stroke-dashoffset:-36}}
+.hw-pulse{animation:hw-rise 3.4s cubic-bezier(.5,0,.5,1) infinite}
+@keyframes hw-rise{0%{transform:translateY(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateY(var(--h));opacity:0}}
+@media (prefers-reduced-motion: reduce){.hw-flow,.hw-pulse{animation:none} .hw-pulse{opacity:0}}
+</style><rect width="1200" height="780" rx="28" fill="url(#hw-bg)"/><rect width="1200" height="780" rx="28" fill="url(#hw-grid)"/><ellipse cx="144.0" cy="624.0" rx="360.0" ry="234.0" fill="url(#hw-glowC)"/><ellipse cx="600" cy="155.0" rx="432.0" ry="192.6" fill="url(#hw-glowO)"/><path d="M775 74L655 66 M642 291L689 314 M642 291L761 296 M642 291L546 242 M642 291L693 358 M87 396L63 341 M87 396L230 450 M87 396L196 382 M87 396L65 514 M87 396L90 539 M63 341L196 382 M101 87L164 185 M101 87L187 107 M101 87L89 172 M512 632L378 624 M512 632L629 668 M512 632L505 580 M512 632L570 511 M164 185L187 107 M164 185L89 172 M748 721L629 668 M689 314L761 296 M689 314L809 336 M689 314L693 358 M1152 54L1157 107 M1016 234L866 233 M1016 234L1036 252 M187 107L89 172 M378 624L505 580 M230 450L384 453 M230 450L303 445 M230 450L196 382 M761 296L809 336 M761 296L866 233 M761 296L693 358 M809 336L866 233 M809 336L907 444 M809 336L827 460 M809 336L693 358 M384 453L303 445 M941 537L907 444 M941 537L827 460 M303 445L196 382 M629 668L505 580 M505 580L570 511 M65 514L90 539 M907 444L827 460" stroke="#3AA8FF" stroke-opacity="0.08" fill="none"/><circle cx="396" cy="132" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="775" cy="74" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="642" cy="291" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="87" cy="396" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="63" cy="341" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="101" cy="87" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="512" cy="632" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="164" cy="185" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="748" cy="721" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="689" cy="314" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="1152" cy="54" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="1016" cy="234" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="187" cy="107" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="378" cy="624" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="230" cy="450" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="761" cy="296" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="655" cy="66" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="89" cy="172" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="809" cy="336" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="384" cy="453" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="546" cy="242" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="941" cy="537" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="303" cy="445" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="629" cy="668" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="866" cy="233" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="1157" cy="107" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="505" cy="580" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="196" cy="382" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="65" cy="514" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="907" cy="444" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="1036" cy="252" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="827" cy="460" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="693" cy="358" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="994" cy="719" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="570" cy="511" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><circle cx="90" cy="539" r="1.8" fill="#B9C2FF" fill-opacity=".35"/><polygon points="600,48 1080,262 120,262" fill="#E6007E" opacity="0.35" filter="url(#hw-blur)"/><polygon points="600,48 1080,262 120,262" fill="url(#hw-roofSolid)" stroke="#FFC2E3" stroke-width="1.5" stroke-linejoin="round" filter="url(#hw-drop)"/><polygon points="600,48 1080,262 120,262" fill="url(#hw-roofShine)"/><text x="600" y="182" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="52" font-weight="800" fill="#10213D" text-anchor="middle" letter-spacing="6">WERT</text><text x="600" y="226" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="19" font-weight="600" fill="#10213D" text-anchor="middle" letter-spacing="0">Wo entsteht wirtschaftlicher Nutzen?</text><line x1="450" y1="562" x2="450" y2="266" stroke="url(#hw-beam)" stroke-width="2.5" stroke-linecap="round"/><circle class="hw-pulse" style="--h:-288px;animation-delay:0.0s" cx="450" cy="558" r="3.5" fill="#FF8CC8"/><circle class="hw-pulse" style="--h:-288px;animation-delay:1.1s" cx="450" cy="558" r="3.5" fill="#FF8CC8"/><circle class="hw-pulse" style="--h:-288px;animation-delay:2.2s" cx="450" cy="558" r="3.5" fill="#FF8CC8"/><line x1="750" y1="562" x2="750" y2="266" stroke="url(#hw-beam)" stroke-width="2.5" stroke-linecap="round"/><circle class="hw-pulse" style="--h:-288px;animation-delay:0.55s" cx="750" cy="558" r="3.5" fill="#FF8CC8"/><circle class="hw-pulse" style="--h:-288px;animation-delay:1.6500000000000001s" cx="750" cy="558" r="3.5" fill="#FF8CC8"/><circle class="hw-pulse" style="--h:-288px;animation-delay:2.75s" cx="750" cy="558" r="3.5" fill="#FF8CC8"/><path d="M250.0 566V549.0H275.0V532" fill="none" stroke="#8FA0FF" stroke-opacity="0.35" stroke-width="1.5"/><path class="hw-flow" d="M250.0 566V549.0H275.0V532" fill="none" stroke="#8FA0FF" stroke-width="1.8" style="animation-direction:reverse"/><path d="M350.0 566V549.0H325.0V532" fill="none" stroke="#8FA0FF" stroke-opacity="0.35" stroke-width="1.5"/><path class="hw-flow" d="M350.0 566V549.0H325.0V532" fill="none" stroke="#8FA0FF" stroke-width="1.8" style="animation-direction:reverse"/><rect x="170" y="300" width="260" height="232" rx="16" fill="#071431"/><rect x="170" y="300" width="260" height="232" rx="16" fill="url(#hw-glassD)" stroke="url(#hw-edge)" stroke-width="1.5" filter="url(#hw-drop)"/><rect x="170" y="300" width="260" height="232" rx="16" fill="url(#hw-shine)"/><circle cx="300.0" cy="358" r="30" fill="#FFFFFF" fill-opacity=".14" stroke="#B9C2FF" stroke-opacity=".7" stroke-width="1.5"/><g transform="translate(300.0,358) scale(0.95)" fill="none" stroke="#EEF0FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="-17" cy="0" r="4.5"/><rect x="-6" y="-7" width="14" height="14" rx="3"/><path d="M-12 0H-6M8 0H17M13 -4L17 0L13 4"/></g><text x="300.0" y="432" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">ABLÄUFE</text><text x="300.0" y="470" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="400" fill="#CDEFFF" text-anchor="middle" letter-spacing="0">Welche Prozesse</text><text x="300.0" y="494" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="400" fill="#CDEFFF" text-anchor="middle" letter-spacing="0">und Engpässe?</text><path d="M550.0 566V549.0H575.0V532" fill="none" stroke="#8FA0FF" stroke-opacity="0.35" stroke-width="1.5"/><path class="hw-flow" d="M550.0 566V549.0H575.0V532" fill="none" stroke="#8FA0FF" stroke-width="1.8" style="animation-direction:reverse"/><path d="M650.0 566V549.0H625.0V532" fill="none" stroke="#8FA0FF" stroke-opacity="0.35" stroke-width="1.5"/><path class="hw-flow" d="M650.0 566V549.0H625.0V532" fill="none" stroke="#8FA0FF" stroke-width="1.8" style="animation-direction:reverse"/><rect x="470" y="300" width="260" height="232" rx="16" fill="#071431"/><rect x="470" y="300" width="260" height="232" rx="16" fill="url(#hw-glassD)" stroke="url(#hw-edge)" stroke-width="1.5" filter="url(#hw-drop)"/><rect x="470" y="300" width="260" height="232" rx="16" fill="url(#hw-shine)"/><circle cx="600.0" cy="358" r="30" fill="#FFFFFF" fill-opacity=".14" stroke="#B9C2FF" stroke-opacity=".7" stroke-width="1.5"/><g transform="translate(600.0,358) scale(0.95)" fill="none" stroke="#EEF0FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -17C1.5 -6 6 -1.5 17 0C6 1.5 1.5 6 0 17C-1.5 6 -6 1.5 -17 0C-6 -1.5 -1.5 -6 0 -17Z"/><circle cx="13" cy="-13" r="2" fill="#EEF0FF" stroke="none"/></g><text x="600.0" y="432" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">INTELLIGENZ</text><text x="600.0" y="470" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="400" fill="#CDEFFF" text-anchor="middle" letter-spacing="0">Welche Aufgabe</text><text x="600.0" y="494" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="400" fill="#CDEFFF" text-anchor="middle" letter-spacing="0">übernimmt die KI?</text><path d="M850.0 566V549.0H875.0V532" fill="none" stroke="#8FA0FF" stroke-opacity="0.35" stroke-width="1.5"/><path class="hw-flow" d="M850.0 566V549.0H875.0V532" fill="none" stroke="#8FA0FF" stroke-width="1.8" style="animation-direction:reverse"/><path d="M950.0 566V549.0H925.0V532" fill="none" stroke="#8FA0FF" stroke-opacity="0.35" stroke-width="1.5"/><path class="hw-flow" d="M950.0 566V549.0H925.0V532" fill="none" stroke="#8FA0FF" stroke-width="1.8" style="animation-direction:reverse"/><rect x="770" y="300" width="260" height="232" rx="16" fill="#071431"/><rect x="770" y="300" width="260" height="232" rx="16" fill="url(#hw-glassD)" stroke="url(#hw-edge)" stroke-width="1.5" filter="url(#hw-drop)"/><rect x="770" y="300" width="260" height="232" rx="16" fill="url(#hw-shine)"/><circle cx="900.0" cy="358" r="30" fill="#FFFFFF" fill-opacity=".14" stroke="#B9C2FF" stroke-opacity=".7" stroke-width="1.5"/><g transform="translate(900.0,358) scale(0.95)" fill="none" stroke="#EEF0FF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="0" cy="-11" rx="14" ry="5"/><path d="M-14 -11V11C-14 14 -8 16 0 16C8 16 14 14 14 11V-11M-14 0C-14 3 -8 5 0 5C8 5 14 3 14 0"/></g><text x="900.0" y="432" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="1.5">DATEN</text><text x="900.0" y="470" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="400" fill="#CDEFFF" text-anchor="middle" letter-spacing="0">Welche Daten und</text><text x="900.0" y="494" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="400" fill="#CDEFFF" text-anchor="middle" letter-spacing="0">welches Wissen?</text><rect x="130" y="566" width="940" height="74" rx="14" fill="#071431"/><rect x="130" y="566" width="940" height="74" rx="14" fill="url(#hw-slabMD)" stroke="#5B9BFF" stroke-opacity=".8" stroke-width="1.4" filter="url(#hw-drop)"/><rect x="130" y="566" width="940" height="74" rx="14" fill="url(#hw-shine)"/><circle cx="176" cy="603.0" r="21" fill="#FFFFFF" fill-opacity=".14"/><g transform="translate(176,603.0) scale(0.78)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="-7" r="6"/><path d="M-12 14C-12 5 -6 2 0 2C6 2 12 5 12 14"/></g><text x="214" y="610.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1.5">MENSCH</text><text x="384" y="609.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.5" font-weight="400" fill="#DCE9FF" text-anchor="start" letter-spacing="0">Wer arbeitet wie mit KI – und trägt Verantwortung?</text><rect x="130" y="656" width="940" height="74" rx="14" fill="#071431"/><rect x="130" y="656" width="940" height="74" rx="14" fill="url(#hw-slabSD)" stroke="#5B95FF" stroke-opacity=".8" stroke-width="1.4" filter="url(#hw-drop)"/><rect x="130" y="656" width="940" height="74" rx="14" fill="url(#hw-shine)"/><circle cx="176" cy="693.0" r="21" fill="#FFFFFF" fill-opacity=".14"/><g transform="translate(176,693.0) scale(0.78)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M-15 8A15 15 0 1 1 15 8"/><path d="M0 4L8 -8"/><circle cx="0" cy="4" r="2.6" fill="#FFFFFF" stroke="none"/></g><text x="214" y="700.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="21" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1.5">STEUERUNG</text><text x="384" y="699.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.5" font-weight="400" fill="#DCE9FF" text-anchor="start" letter-spacing="0">Welche Regeln, Kennzahlen und Kontrollen sichern den Erfolg?</text></svg></div>
+    <div class="gfx gfx-m"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 706" role="img" aria-label="Die KI-Wertarchitektur: Wert als Dach, getragen von Abläufen, Intelligenz und Daten, auf dem Fundament aus Mensch und Steuerung"><defs><radialGradient id="hm-bg" cx="50%" cy="0%" r="115%"><stop offset="0" stop-color="#14305A"/><stop offset=".55" stop-color="#0C1F3D"/><stop offset="1" stop-color="#071226"/></radialGradient>
+<linearGradient id="hm-roof" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF6FBF"/><stop offset=".6" stop-color="#E6007E"/><stop offset="1" stop-color="#A0179E"/></linearGradient>
+<linearGradient id="hm-pa" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6F7BFF"/><stop offset="1" stop-color="#5A5CF0"/></linearGradient>
+<linearGradient id="hm-pb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366F1"/><stop offset="1" stop-color="#4338CA"/></linearGradient>
+<linearGradient id="hm-pc" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4A3FD8"/><stop offset="1" stop-color="#3A2FB8"/></linearGradient>
+<linearGradient id="hm-sm" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1E4FD8"/><stop offset="1" stop-color="#3B82FF"/></linearGradient>
+<linearGradient id="hm-ss" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0A1A33"/><stop offset="1" stop-color="#132B52"/></linearGradient>
+<filter id="hm-drop" x="-10%" y="-20%" width="120%" height="170%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000814" flood-opacity=".45"/></filter>
+<filter id="hm-blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter></defs><rect width="420" height="706" rx="24" fill="url(#hm-bg)"/><polygon points="210,22 404,172 16,172" fill="#E6007E" opacity=".28" filter="url(#hm-blur)"/><polygon points="210,22 404,172 16,172" fill="url(#hm-roof)" stroke="#FFC2E3" stroke-width="1.5" stroke-linejoin="round" filter="url(#hm-drop)"/><text x="210" y="124" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="34" font-weight="800" fill="#10213D" text-anchor="middle" letter-spacing="5">WERT</text><text x="210" y="154" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.5" font-weight="600" fill="#10213D" text-anchor="middle" letter-spacing="0">Wo entsteht wirtschaftlicher Nutzen?</text><rect x="16" y="196" width="388" height="82" rx="14" fill="url(#hm-pa)" filter="url(#hm-drop)"/><circle cx="52" cy="237.0" r="22" fill="#FFFFFF" fill-opacity=".16" stroke="#FFFFFF" stroke-opacity=".6"/><g transform="translate(52,237.0) scale(0.75)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="-17" cy="0" r="4.5"/><rect x="-6" y="-7" width="14" height="14" rx="3"/><path d="M-12 0H-6M8 0H17M13 -4L17 0L13 4"/></g><text x="88" y="231" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1.2">ABLÄUFE</text><text x="88" y="255" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#EEF0FF" text-anchor="start" letter-spacing="0">Welche Prozesse und Engpässe?</text><rect x="16" y="288" width="388" height="82" rx="14" fill="url(#hm-pb)" filter="url(#hm-drop)"/><circle cx="52" cy="329.0" r="22" fill="#FFFFFF" fill-opacity=".16" stroke="#FFFFFF" stroke-opacity=".6"/><g transform="translate(52,329.0) scale(0.75)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M0 -17C1.5 -6 6 -1.5 17 0C6 1.5 1.5 6 0 17C-1.5 6 -6 1.5 -17 0C-6 -1.5 -1.5 -6 0 -17Z"/><circle cx="13" cy="-13" r="2" fill="#FFFFFF" stroke="none"/></g><text x="88" y="323" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1.2">INTELLIGENZ</text><text x="88" y="347" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#EEF0FF" text-anchor="start" letter-spacing="0">Welche Aufgabe übernimmt die KI?</text><rect x="16" y="380" width="388" height="82" rx="14" fill="url(#hm-pc)" filter="url(#hm-drop)"/><circle cx="52" cy="421.0" r="22" fill="#FFFFFF" fill-opacity=".16" stroke="#FFFFFF" stroke-opacity=".6"/><g transform="translate(52,421.0) scale(0.75)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="0" cy="-11" rx="14" ry="5"/><path d="M-14 -11V11C-14 14 -8 16 0 16C8 16 14 14 14 11V-11M-14 0C-14 3 -8 5 0 5C8 5 14 3 14 0"/></g><text x="88" y="415" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1.2">DATEN</text><text x="88" y="439" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#EEF0FF" text-anchor="start" letter-spacing="0">Welche Daten und welches Wissen?</text><text x="210" y="479" text-anchor="middle" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="10.5" letter-spacing="2" fill="#6F829E">FUNDAMENT</text><rect x="16" y="486" width="388" height="96" rx="14" fill="url(#hm-sm)" stroke="#2F7BFF" stroke-opacity=".7" filter="url(#hm-drop)"/><circle cx="52" cy="534.0" r="22" fill="#FFFFFF" fill-opacity=".14"/><g transform="translate(52,534.0) scale(0.75)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="0" cy="-7" r="6"/><path d="M-12 14C-12 5 -6 2 0 2C6 2 12 5 12 14"/></g><text x="88" y="518" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1.2">MENSCH</text><text x="88" y="542" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#E6EEFF" text-anchor="start" letter-spacing="0">Wer arbeitet wie mit KI –</text><text x="88" y="561" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#E6EEFF" text-anchor="start" letter-spacing="0">und trägt Verantwortung?</text><rect x="16" y="592" width="388" height="96" rx="14" fill="url(#hm-ss)" stroke="#5153E0" stroke-opacity=".7" filter="url(#hm-drop)"/><circle cx="52" cy="640.0" r="22" fill="#FFFFFF" fill-opacity=".14"/><g transform="translate(52,640.0) scale(0.75)" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M-15 8A15 15 0 1 1 15 8"/><path d="M0 4L8 -8"/><circle cx="0" cy="4" r="2.6" fill="#FFFFFF" stroke="none"/></g><text x="88" y="624" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="1.2">STEUERUNG</text><text x="88" y="648" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#E6EEFF" text-anchor="start" letter-spacing="0">Welche Regeln, Kennzahlen und</text><text x="88" y="667" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14" font-weight="400" fill="#E6EEFF" text-anchor="start" letter-spacing="0">Kontrollen sichern den Erfolg?</text></svg></div>
+    </div>
+
+    <div class="wa-block" id="weg">
+      <div class="wa-head">
+        <h3>Ihr Weg: vom Quick-Check zur laufenden Lösung</h3>
+        <p class="muted">Jeder Schritt baut auf dem vorherigen auf. Den Quick-Check machen Sie kostenlos und selbst, ab dem X-Ray begleiten wir Sie.</p>
+      </div>
+      <div class="gfx gfx-w"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1200 650" role="img" aria-label="Der Weg mit KIONEXT: von heute über KI-Quick-Check, X-Ray, X-Pedition und X-Pand zur erfolgreichen Umsetzung"><defs>
+<radialGradient id="jw-bg" cx="85%" cy="5%" r="120%"><stop offset="0" stop-color="#0F2A55"/><stop offset=".5" stop-color="#081734"/><stop offset="1" stop-color="#030A1A"/></radialGradient>
+<radialGradient id="jw-aura" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FF5CAE" stop-opacity=".5"/><stop offset="1" stop-color="#FF5CAE" stop-opacity="0"/></radialGradient>
+<radialGradient id="jw-auraB" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4C8DFF" stop-opacity=".22"/><stop offset="1" stop-color="#4C8DFF" stop-opacity="0"/></radialGradient>
+<linearGradient id="jw-road" gradientUnits="userSpaceOnUse" x1="320" y1="448" x2="1100" y2="232"><stop offset="0" stop-color="#5B95FF"/><stop offset=".28" stop-color="#7B6BFF"/><stop offset=".55" stop-color="#4C8DFF"/><stop offset=".82" stop-color="#E6007E"/><stop offset="1" stop-color="#FF5CAE"/></linearGradient>
+<filter id="jw-glow" filterUnits="userSpaceOnUse" x="0" y="0" width="1200" height="690"><feGaussianBlur stdDeviation="9"/></filter>
+<filter id="jw-drop" x="-15%" y="-20%" width="130%" height="170%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#020814" flood-opacity=".28"/></filter>
+</defs>
+<style>
+.jw-flow{stroke-dasharray:2 22;animation:jw-flow 2.2s linear infinite}
+@keyframes jw-flow{to{stroke-dashoffset:-48}}
+.jw-ring{transform-box:fill-box;transform-origin:center;animation:jw-ring 3s ease-out infinite}
+@keyframes jw-ring{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+@media (prefers-reduced-motion: reduce){.jw-flow,.jw-ring{animation:none} .jw-ring{opacity:0}}
+</style><rect y="40" width="1200" height="650" rx="28" fill="url(#jw-bg)"/><ellipse cx="960.0" cy="241.49999999999997" rx="480.0" ry="310.5" fill="url(#jw-auraB)"/><path d="M1100 470L-580 690 M1100 470L-460 690 M1100 470L-340 690 M1100 470L-220 690 M1100 470L-100 690 M1100 470L20 690 M1100 470L140 690 M1100 470L260 690 M1100 470L380 690 M1100 470L500 690 M1100 470L620 690 M1100 470L740 690 M1100 470L860 690 M1100 470L980 690 M1100 470L1100 690 M1100 470L1220 690 M1100 470L1340 690 M1100 470L1460 690 M1100 470L1580 690 M1100 470L1700 690 M1100 470L1820 690 M1100 470L1940 690 M1100 470L2060 690 M1100 470L2180 690 M1100 470L2300 690 M1100 470L2420 690 M1100 470L2540 690 M1100 470L2660 690 M1100 470L2780 690 M0 470H1200 M0 476H1200 M0 484H1200 M0 495H1200 M0 510H1200 M0 530H1200 M0 557H1200 M0 593H1200 M0 642H1200" stroke="#4C8DFF" stroke-opacity="0.1" fill="none"/><rect x="0" y="410" width="1200" height="70" fill="url(#jw-bg)" opacity=".0"/><path d="M846 538L846 572 M880 640L914 640 M1050 334L1050 368 M880 164L914 164 M880 164L880 198 M846 504L880 504 M846 504L846 538 M948 436L948 470 M982 572L1016 572 M846 300L880 300 M846 300L846 334 M982 334L1016 334 M1050 538L1084 538 M948 402L982 402 M948 402L948 436 M846 470L846 504 M1118 572L1152 572 M846 198L880 198 M1050 504L1050 538 M1016 606L1016 640 M914 232L914 266 M914 470L948 470 M812 300L846 300 M1152 402L1152 436 M1050 470L1050 504 M846 640L880 640 M948 334L982 334 M846 164L880 164 M846 164L846 198 M812 504L846 504 M914 198L914 232 M1016 572L1016 606 M1016 334L1050 334 M812 266L812 300 M1084 368L1118 368 M982 232L1016 232 M982 232L982 266 M1016 538L1050 538 M1016 538L1016 572 M880 198L914 198 M914 164L948 164 M914 164L914 198 M1084 572L1118 572 M982 198L982 232 M1050 164L1050 198 M1152 572L1152 606 M1118 436L1152 436 M1118 436L1118 470 M914 606L914 640 M1050 130L1084 130 M1050 130L1050 164 M1016 504L1050 504 M1016 504L1016 538 M1084 538L1084 572 M1152 538L1152 572 M1050 368L1084 368" stroke="#4C8DFF" stroke-opacity="0.16" stroke-width="1"/><circle cx="531.3" cy="272.9" r="1.6" fill="#8FD8FF" fill-opacity="0.36"/><circle cx="210.5" cy="126.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="542.3" cy="331.8" r="1.5" fill="#8FD8FF" fill-opacity="0.35"/><circle cx="1050.0" cy="538.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="360.2" cy="555.2" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="194.1" cy="309.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="688.6" cy="121.0" r="1.8" fill="#8FD8FF" fill-opacity="0.44"/><circle cx="844.9" cy="575.1" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="982.1" cy="265.9" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="272.6" cy="688.4" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="947.9" cy="436.4" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="779.7" cy="580.3" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="117.4" cy="420.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="414.7" cy="508.9" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="248.4" cy="386.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="588.2" cy="435.1" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="1050.0" cy="198.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="315.3" cy="157.0" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="279.2" cy="191.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="846.5" cy="474.4" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="634.3" cy="358.0" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="176.9" cy="181.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="420.1" cy="551.7" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="77.7" cy="519.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="845.6" cy="538.2" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="226.6" cy="425.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="535.8" cy="419.9" r="1.6" fill="#8FD8FF" fill-opacity="0.36"/><circle cx="656.9" cy="466.7" r="1.8" fill="#8FD8FF" fill-opacity="0.44"/><circle cx="706.0" cy="132.9" r="1.9" fill="#8FD8FF" fill-opacity="0.46"/><circle cx="315.9" cy="146.6" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="780.2" cy="499.5" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="1084.0" cy="130.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="36.9" cy="499.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="705.6" cy="293.9" r="1.9" fill="#8FD8FF" fill-opacity="0.46"/><circle cx="809.0" cy="400.1" r="2.1" fill="#8FD8FF" fill-opacity="0.51"/><circle cx="43.3" cy="235.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="598.9" cy="377.4" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="244.9" cy="280.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="528.7" cy="639.8" r="1.5" fill="#8FD8FF" fill-opacity="0.35"/><circle cx="226.3" cy="439.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="982.0" cy="401.9" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="1152.0" cy="334.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="389.4" cy="431.9" r="1.4" fill="#8FD8FF" fill-opacity="0.30"/><circle cx="209.7" cy="495.4" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1152.0" cy="402.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="645.1" cy="550.7" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="913.0" cy="265.9" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="1118.0" cy="572.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="524.0" cy="188.7" r="1.5" fill="#8FD8FF" fill-opacity="0.35"/><circle cx="1152.0" cy="436.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="124.7" cy="408.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="141.1" cy="377.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="129.9" cy="88.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1118.0" cy="436.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="915.5" cy="164.4" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="737.5" cy="275.5" r="2.0" fill="#8FD8FF" fill-opacity="0.48"/><circle cx="1050.0" cy="164.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="240.2" cy="275.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="300.7" cy="137.4" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="881.7" cy="162.4" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="1152.0" cy="572.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="59.9" cy="114.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="130.1" cy="147.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="180.0" cy="619.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="781.0" cy="539.8" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="807.3" cy="399.4" r="2.1" fill="#8FD8FF" fill-opacity="0.51"/><circle cx="273.9" cy="289.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="846.7" cy="193.2" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="1016.0" cy="538.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="947.8" cy="164.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="724.6" cy="569.3" r="1.9" fill="#8FD8FF" fill-opacity="0.46"/><circle cx="33.4" cy="343.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="136.0" cy="531.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="50.3" cy="513.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="571.9" cy="209.5" r="1.7" fill="#8FD8FF" fill-opacity="0.38"/><circle cx="1152.0" cy="538.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="231.1" cy="101.4" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="846.3" cy="164.7" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="849.3" cy="298.3" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="304.7" cy="148.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="655.7" cy="414.7" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="1118.0" cy="368.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="172.2" cy="435.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="220.2" cy="383.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1016.0" cy="538.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="787.5" cy="569.5" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="562.9" cy="603.1" r="1.6" fill="#8FD8FF" fill-opacity="0.36"/><circle cx="912.8" cy="639.7" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="295.4" cy="324.9" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="1152.0" cy="606.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="328.2" cy="365.2" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="1118.0" cy="470.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="646.4" cy="575.9" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="597.8" cy="321.8" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="842.6" cy="332.5" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="718.9" cy="628.4" r="1.9" fill="#8FD8FF" fill-opacity="0.46"/><circle cx="1050.0" cy="334.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="117.6" cy="593.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="879.8" cy="162.2" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="570.5" cy="221.6" r="1.6" fill="#8FD8FF" fill-opacity="0.36"/><circle cx="558.4" cy="309.9" r="1.6" fill="#8FD8FF" fill-opacity="0.36"/><circle cx="62.1" cy="352.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="366.7" cy="599.3" r="1.4" fill="#8FD8FF" fill-opacity="0.30"/><circle cx="242.9" cy="242.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="92.8" cy="529.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="731.7" cy="125.6" r="2.0" fill="#8FD8FF" fill-opacity="0.48"/><circle cx="841.6" cy="641.5" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="1084.0" cy="538.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="616.7" cy="177.6" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="1152.0" cy="402.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="815.9" cy="500.9" r="2.1" fill="#8FD8FF" fill-opacity="0.51"/><circle cx="589.2" cy="259.5" r="1.7" fill="#8FD8FF" fill-opacity="0.38"/><circle cx="1152.0" cy="232.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="151.4" cy="443.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="374.7" cy="301.6" r="1.4" fill="#8FD8FF" fill-opacity="0.30"/><circle cx="1016.0" cy="232.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="745.4" cy="575.9" r="2.0" fill="#8FD8FF" fill-opacity="0.48"/><circle cx="1016.0" cy="640.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="189.5" cy="259.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="877.4" cy="502.5" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="82.2" cy="266.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="565.0" cy="533.6" r="1.6" fill="#8FD8FF" fill-opacity="0.36"/><circle cx="982.0" cy="198.1" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="243.5" cy="223.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="234.4" cy="198.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="915.1" cy="538.9" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="366.0" cy="542.5" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="341.3" cy="276.0" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="657.7" cy="127.5" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="913.4" cy="539.4" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="694.6" cy="647.3" r="1.8" fill="#8FD8FF" fill-opacity="0.44"/><circle cx="657.7" cy="627.9" r="1.8" fill="#8FD8FF" fill-opacity="0.44"/><circle cx="59.4" cy="249.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1084.0" cy="300.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="398.3" cy="334.0" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="982.0" cy="232.1" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="332.7" cy="224.7" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="116.8" cy="101.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="170.2" cy="686.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="722.0" cy="476.3" r="1.9" fill="#8FD8FF" fill-opacity="0.46"/><circle cx="339.3" cy="208.5" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="124.1" cy="181.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="500.8" cy="193.0" r="1.5" fill="#8FD8FF" fill-opacity="0.33"/><circle cx="492.5" cy="661.0" r="1.5" fill="#8FD8FF" fill-opacity="0.35"/><circle cx="915.2" cy="198.7" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="879.8" cy="637.2" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="948.2" cy="333.8" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="1016.0" cy="606.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="440.5" cy="626.0" r="1.4" fill="#8FD8FF" fill-opacity="0.30"/><circle cx="811.2" cy="501.9" r="2.1" fill="#8FD8FF" fill-opacity="0.51"/><circle cx="883.1" cy="370.0" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="552.7" cy="501.6" r="1.7" fill="#8FD8FF" fill-opacity="0.38"/><circle cx="413.1" cy="271.8" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="880.9" cy="297.6" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="369.1" cy="563.6" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="58.3" cy="528.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="121.5" cy="356.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="35.9" cy="355.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="423.7" cy="267.1" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="300.8" cy="141.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1016.0" cy="436.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="78.0" cy="453.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="219.8" cy="215.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="-21.1" cy="187.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="368.3" cy="134.1" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="1118.0" cy="470.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="1050.0" cy="470.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="76.8" cy="549.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="882.9" cy="195.9" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="914.0" cy="232.2" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="882.2" cy="302.4" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="850.4" cy="502.6" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="913.1" cy="607.0" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="1050.0" cy="504.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="841.2" cy="636.6" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="19.6" cy="626.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="205.5" cy="507.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="126.5" cy="207.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="730.9" cy="496.0" r="2.0" fill="#8FD8FF" fill-opacity="0.48"/><circle cx="241.5" cy="427.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="171.8" cy="284.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="344.6" cy="216.9" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="540.2" cy="415.5" r="1.5" fill="#8FD8FF" fill-opacity="0.35"/><circle cx="1118.0" cy="572.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="708.9" cy="338.0" r="1.9" fill="#8FD8FF" fill-opacity="0.46"/><circle cx="108.7" cy="271.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="282.0" cy="307.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="223.1" cy="641.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="262.3" cy="680.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="780.1" cy="536.9" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="303.8" cy="446.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="842.0" cy="328.8" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="669.8" cy="186.0" r="1.8" fill="#8FD8FF" fill-opacity="0.44"/><circle cx="157.6" cy="520.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1152.0" cy="334.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="103.3" cy="463.4" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="563.4" cy="348.9" r="1.7" fill="#8FD8FF" fill-opacity="0.38"/><circle cx="501.9" cy="372.8" r="1.5" fill="#8FD8FF" fill-opacity="0.33"/><circle cx="1016.0" cy="572.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="915.4" cy="641.7" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="1050.0" cy="164.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="360.9" cy="200.1" r="1.4" fill="#8FD8FF" fill-opacity="0.30"/><circle cx="1118.0" cy="164.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="471.3" cy="365.2" r="1.5" fill="#8FD8FF" fill-opacity="0.33"/><circle cx="1016.0" cy="334.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="212.3" cy="596.4" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="128.3" cy="362.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="664.0" cy="555.2" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="811.0" cy="306.7" r="2.1" fill="#8FD8FF" fill-opacity="0.51"/><circle cx="1050.0" cy="368.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="640.3" cy="147.7" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="692.8" cy="368.8" r="1.8" fill="#8FD8FF" fill-opacity="0.44"/><circle cx="44.0" cy="227.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="113.0" cy="245.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1016.0" cy="504.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="63.7" cy="587.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="948.4" cy="470.1" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="213.6" cy="578.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="1084.0" cy="572.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="13.7" cy="626.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="413.6" cy="391.4" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="914.2" cy="469.2" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="323.5" cy="177.8" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="1016.0" cy="606.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="1118.0" cy="572.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="622.5" cy="283.5" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="263.7" cy="565.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="605.5" cy="426.2" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="299.8" cy="423.5" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="1084.0" cy="368.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="598.3" cy="135.2" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="228.0" cy="670.4" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="604.6" cy="209.6" r="1.7" fill="#8FD8FF" fill-opacity="0.40"/><circle cx="141.1" cy="690.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="982.0" cy="334.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="844.1" cy="535.6" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="78.1" cy="458.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="625.1" cy="152.5" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="170.6" cy="607.4" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="226.4" cy="268.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="81.6" cy="456.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="948.6" cy="402.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="627.1" cy="163.4" r="1.8" fill="#8FD8FF" fill-opacity="0.42"/><circle cx="336.3" cy="285.8" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="1016.0" cy="538.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="160.2" cy="264.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="470.1" cy="227.3" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="324.2" cy="294.5" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="851.1" cy="297.7" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="265.1" cy="193.2" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="786.9" cy="187.9" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="819.3" cy="262.2" r="2.1" fill="#8FD8FF" fill-opacity="0.51"/><circle cx="769.9" cy="647.1" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="1050.0" cy="130.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="982.0" cy="572.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="982.0" cy="266.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="475.1" cy="465.9" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="446.3" cy="467.0" r="1.4" fill="#8FD8FF" fill-opacity="0.30"/><circle cx="347.5" cy="441.4" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="122.1" cy="204.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><text x="48" y="664" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="12.0" font-weight="500" fill="#6F829E" text-anchor="start" letter-spacing="1" opacity="1">Einzelne Experimente</text><text x="1152" y="664" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="12.0" font-weight="500" fill="#6F829E" text-anchor="end" letter-spacing="1" opacity="1">Strukturiertes KI-Betriebsmodell</text><path d="M150 660H900" stroke="#6F829E" stroke-opacity=".5" stroke-dasharray="2 6"/><path d="M894 655l6 5-6 5" fill="none" stroke="#6F829E" stroke-opacity=".7"/><path d="M110 480C190 484 230 458 320 448" fill="none" stroke="#8A9BB3" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M320 448 C355.0 440.7 460.0 421.0 530 404 C600.0 387.0 670.0 366.7 740 346 C810.0 325.3 890.0 299.0 950 280 C1010.0 261.0 1075.0 240.0 1100 232" fill="none" stroke="url(#jw-road)" stroke-width="14" stroke-linecap="round" opacity=".45" filter="url(#jw-glow)"/><path d="M320 448 C355.0 440.7 460.0 421.0 530 404 C600.0 387.0 670.0 366.7 740 346 C810.0 325.3 890.0 299.0 950 280 C1010.0 261.0 1075.0 240.0 1100 232" fill="none" stroke="url(#jw-road)" stroke-width="4.5" stroke-linecap="round"/><path class="jw-flow" d="M320 448 C355.0 440.7 460.0 421.0 530 404 C600.0 387.0 670.0 366.7 740 346 C810.0 325.3 890.0 299.0 950 280 C1010.0 261.0 1075.0 240.0 1100 232" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity=".9"/><path d="M110 494V524" stroke="#8A9BB3" stroke-opacity=".6" stroke-dasharray="2 4"/><path d="M320 434V402" stroke="#5B95FF" stroke-opacity=".6" stroke-dasharray="2 4"/><path d="M530 418V456" stroke="#7B6BFF" stroke-opacity=".6" stroke-dasharray="2 4"/><path d="M740 332V298" stroke="#4C8DFF" stroke-opacity=".6" stroke-dasharray="2 4"/><path d="M950 294V334" stroke="#E6007E" stroke-opacity=".6" stroke-dasharray="2 4"/><path d="M1100 200V178" stroke="#FF5CAE" stroke-opacity=".6" stroke-dasharray="2 4"/><g filter="url(#jw-drop)"><rect x="24" y="524" width="196" height="118" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M38 524.8H206" stroke="#8A9BB3" stroke-width="2.4" stroke-linecap="round"/><rect x="42" y="540.0" width="30" height="20" rx="10" fill="#8A9BB3" fill-opacity=".16"/><text x="57.0" y="554.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#8A9BB3" text-anchor="middle" letter-spacing="0" opacity="1">00</text><text x="82.0" y="554.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="600" fill="#8A9BB3" text-anchor="start" letter-spacing="1.3" opacity="1">AUSGANGSLAGE</text><text x="42" y="584.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">Heute</text><text x="42" y="606.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Einzeltools, offene</text><text x="42" y="625.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Fragen, kein Plan</text><g filter="url(#jw-drop)"><rect x="222" y="284" width="196" height="118" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M236 284.8H404" stroke="#5B95FF" stroke-width="2.4" stroke-linecap="round"/><rect x="240" y="300.0" width="30" height="20" rx="10" fill="#5B95FF" fill-opacity=".16"/><text x="255.0" y="314.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#5B95FF" text-anchor="middle" letter-spacing="0" opacity="1">01</text><text x="280.0" y="314.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="600" fill="#5B95FF" text-anchor="start" letter-spacing="1.3" opacity="1">ORIENTIERUNG</text><text x="240" y="344.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KI-Quick-Check</text><text x="240" y="366.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Standort in wenigen</text><text x="240" y="385.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Minuten bestimmen</text><g filter="url(#jw-drop)"><rect x="432" y="456" width="196" height="118" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M446 456.8H614" stroke="#7B6BFF" stroke-width="2.4" stroke-linecap="round"/><rect x="450" y="472.0" width="30" height="20" rx="10" fill="#7B6BFF" fill-opacity=".16"/><text x="465.0" y="486.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#7B6BFF" text-anchor="middle" letter-spacing="0" opacity="1">02</text><text x="490.0" y="486.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="600" fill="#7B6BFF" text-anchor="start" letter-spacing="1.3" opacity="1">STARTEN</text><text x="450" y="516.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KIONEXT X-Ray</text><text x="450" y="538.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">KI-Ist-Analyse auf</text><text x="450" y="557.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">allen sechs Ebenen</text><g filter="url(#jw-drop)"><rect x="642" y="180" width="196" height="118" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M656 180.8H824" stroke="#4C8DFF" stroke-width="2.4" stroke-linecap="round"/><rect x="660" y="196.0" width="30" height="20" rx="10" fill="#4C8DFF" fill-opacity=".16"/><text x="675.0" y="210.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#4C8DFF" text-anchor="middle" letter-spacing="0" opacity="1">03</text><text x="700.0" y="210.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="600" fill="#4C8DFF" text-anchor="start" letter-spacing="1.3" opacity="1">BAUEN</text><text x="660" y="240.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KIONEXT X-Pedition</text><text x="660" y="262.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Roadmap, Governance,</text><text x="660" y="281.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">erster Pilot live</text><g filter="url(#jw-drop)"><rect x="852" y="334" width="196" height="118" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M866 334.8H1034" stroke="#E6007E" stroke-width="2.4" stroke-linecap="round"/><rect x="870" y="350.0" width="30" height="20" rx="10" fill="#E6007E" fill-opacity=".16"/><text x="885.0" y="364.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#E6007E" text-anchor="middle" letter-spacing="0" opacity="1">04</text><text x="910.0" y="364.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="600" fill="#E6007E" text-anchor="start" letter-spacing="1.3" opacity="1">SKALIEREN</text><text x="870" y="394.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KIONEXT X-Pand</text><text x="870" y="416.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Rollout in die Breite,</text><text x="870" y="435.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Teams befähigt</text><g filter="url(#jw-drop)"><rect x="962" y="60" width="216" height="118" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M976 60.8H1164" stroke="#FF5CAE" stroke-width="2.4" stroke-linecap="round"/><rect x="980" y="76.0" width="30" height="20" rx="10" fill="#FF5CAE" fill-opacity=".16"/><text x="995.0" y="90.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="700" fill="#FF5CAE" text-anchor="middle" letter-spacing="0" opacity="1">✓</text><text x="1020.0" y="90.5" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.0" font-weight="600" fill="#FF5CAE" text-anchor="start" letter-spacing="1.3" opacity="1">ZIEL</text><text x="980" y="120.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="16.5" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">Erfolgreiche Umsetzung</text><text x="980" y="142.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">KI im Alltag, messbarer</text><text x="980" y="161.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="13.6" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Nutzen, skalierbar</text><circle cx="110" cy="480" r="9" fill="#081734" stroke="#8A9BB3" stroke-width="2.5" stroke-dasharray="3 3"/><circle cx="320" cy="448" r="20" fill="#5B95FF" fill-opacity=".14"/><circle cx="320" cy="448" r="10" fill="#081734" stroke="#5B95FF" stroke-width="3"/><circle cx="320" cy="448" r="3.5" fill="#5B95FF"/><circle cx="530" cy="404" r="20" fill="#7B6BFF" fill-opacity=".14"/><circle cx="530" cy="404" r="10" fill="#081734" stroke="#7B6BFF" stroke-width="3"/><circle cx="530" cy="404" r="3.5" fill="#7B6BFF"/><circle cx="740" cy="346" r="20" fill="#4C8DFF" fill-opacity=".14"/><circle cx="740" cy="346" r="10" fill="#081734" stroke="#4C8DFF" stroke-width="3"/><circle cx="740" cy="346" r="3.5" fill="#4C8DFF"/><circle cx="950" cy="280" r="20" fill="#E6007E" fill-opacity=".14"/><circle cx="950" cy="280" r="10" fill="#081734" stroke="#E6007E" stroke-width="3"/><circle cx="950" cy="280" r="3.5" fill="#E6007E"/><circle cx="1100" cy="232" r="70" fill="url(#jw-aura)"/><circle class="jw-ring" cx="1100" cy="232" r="22" fill="none" stroke="#FF5CAE" stroke-width="2"/><circle cx="1100" cy="232" r="30" fill="none" stroke="#FF5CAE" stroke-opacity=".35" stroke-width="1"/><circle cx="1100" cy="232" r="18" fill="#FF5CAE"/><path d="M1093 232L1098 237L1108 227" fill="none" stroke="#0E1F3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="gfx gfx-m"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 914" role="img" aria-label="Der Weg mit KIONEXT: von heute über KI-Quick-Check, X-Ray, X-Pedition und X-Pand zur erfolgreichen Umsetzung"><defs>
+<radialGradient id="jm-bg" cx="85%" cy="5%" r="120%"><stop offset="0" stop-color="#0F2A55"/><stop offset=".5" stop-color="#081734"/><stop offset="1" stop-color="#030A1A"/></radialGradient>
+<radialGradient id="jm-aura" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FF5CAE" stop-opacity=".5"/><stop offset="1" stop-color="#FF5CAE" stop-opacity="0"/></radialGradient>
+<radialGradient id="jm-auraB" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#4C8DFF" stop-opacity=".22"/><stop offset="1" stop-color="#4C8DFF" stop-opacity="0"/></radialGradient>
+<linearGradient id="jm-road" gradientUnits="userSpaceOnUse" x1="36" y1="232" x2="36" y2="832"><stop offset="0" stop-color="#5B95FF"/><stop offset=".28" stop-color="#7B6BFF"/><stop offset=".55" stop-color="#4C8DFF"/><stop offset=".82" stop-color="#E6007E"/><stop offset="1" stop-color="#FF5CAE"/></linearGradient>
+<filter id="jm-glow" filterUnits="userSpaceOnUse" x="0" y="0" width="420" height="914"><feGaussianBlur stdDeviation="9"/></filter>
+<filter id="jm-drop" x="-15%" y="-20%" width="130%" height="170%"><feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#020814" flood-opacity=".28"/></filter>
+</defs>
+<style>
+.jm-flow{stroke-dasharray:2 22;animation:jm-flow 2.2s linear infinite}
+@keyframes jm-flow{to{stroke-dashoffset:-48}}
+.jm-ring{transform-box:fill-box;transform-origin:center;animation:jm-ring 3s ease-out infinite}
+@keyframes jm-ring{0%{transform:scale(.6);opacity:.8}100%{transform:scale(1.9);opacity:0}}
+@media (prefers-reduced-motion: reduce){.jm-flow,.jm-ring{animation:none} .jm-ring{opacity:0}}
+
+/* ---------- Typografie Ausgangslage ---------- */
+p.eyebrow.eyebrow-ic{font-size:1.4rem;font-weight:600;gap:12px;margin-bottom:14px;color:var(--teal-l)}
+p.eyebrow.eyebrow-ic svg{width:28px;height:28px}
+.gap h2{font-size:clamp(1.6rem,2.6vw,2.15rem);line-height:1.2}
+.dotcard h3{font-size:1.5rem}
+.means h3{font-size:1.5rem;color:var(--teal-l);margin:40px 0 6px}
+.gap .conclusion span{font-size:1.3em;font-weight:700;letter-spacing:-.01em}
+@media (max-width:1000px){.means h3{margin-top:8px}}
+@media (max-width:600px){
+  p.eyebrow.eyebrow-ic{font-size:1.2rem}
+  p.eyebrow.eyebrow-ic svg{width:24px;height:24px}
+  .gap h2{font-size:1.45rem}
+  .dotcard h3,.means h3{font-size:1.3rem}
+}
+</style><rect width="420" height="914" rx="24" fill="url(#jm-bg)"/><path d="M324 804L352 804 M128 776L156 776 M268 664L268 692 M184 720L184 748 M380 692L380 720 M184 692L212 692 M184 692L184 720 M268 776L268 804 M212 692L240 692 M100 832L128 832 M156 748L184 748 M156 748L156 776 M72 748L100 748 M240 692L268 692 M268 888L296 888 M128 832L128 860 M16 664L16 692 M128 664L156 664 M72 720L72 748" stroke="#4C8DFF" stroke-opacity="0.16" stroke-width="1"/><circle cx="89.1" cy="252.7" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="305.5" cy="168.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="214.2" cy="454.9" r="1.7" fill="#8FD8FF" fill-opacity="0.41"/><circle cx="324.0" cy="860.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="162.4" cy="244.0" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="240.8" cy="692.6" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="63.7" cy="306.9" r="1.3" fill="#8FD8FF" fill-opacity="0.29"/><circle cx="157.0" cy="27.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="268.7" cy="693.4" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="184.0" cy="804.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="114.9" cy="187.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="128.0" cy="776.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="184.2" cy="692.1" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="206.1" cy="421.9" r="1.6" fill="#8FD8FF" fill-opacity="0.37"/><circle cx="33.8" cy="502.2" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="80.9" cy="587.8" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="287.0" cy="162.4" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="372.2" cy="480.2" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="380.0" cy="860.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="145.4" cy="266.1" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="144.4" cy="225.9" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="16.7" cy="691.4" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="152.2" cy="430.8" r="1.7" fill="#8FD8FF" fill-opacity="0.39"/><circle cx="52.8" cy="146.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="100.0" cy="748.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="367.0" cy="61.6" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="189.3" cy="233.7" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="212.5" cy="692.3" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="250.7" cy="227.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="237.5" cy="504.0" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="98.5" cy="546.1" r="1.9" fill="#8FD8FF" fill-opacity="0.47"/><circle cx="121.0" cy="606.8" r="2.0" fill="#8FD8FF" fill-opacity="0.50"/><circle cx="258.8" cy="582.2" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="259.0" cy="254.7" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="213.8" cy="634.5" r="2.1" fill="#8FD8FF" fill-opacity="0.52"/><circle cx="332.6" cy="478.7" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="57.5" cy="25.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="214.3" cy="547.6" r="1.9" fill="#8FD8FF" fill-opacity="0.47"/><circle cx="142.6" cy="318.6" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="259.5" cy="462.8" r="1.7" fill="#8FD8FF" fill-opacity="0.41"/><circle cx="394.2" cy="64.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="72.0" cy="555.8" r="1.9" fill="#8FD8FF" fill-opacity="0.47"/><circle cx="119.6" cy="448.6" r="1.7" fill="#8FD8FF" fill-opacity="0.39"/><circle cx="260.7" cy="172.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="152.6" cy="431.4" r="1.6" fill="#8FD8FF" fill-opacity="0.37"/><circle cx="57.4" cy="173.5" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="268.0" cy="804.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="3.8" cy="378.3" r="1.5" fill="#8FD8FF" fill-opacity="0.33"/><circle cx="294.0" cy="316.6" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="407.4" cy="146.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="72.0" cy="748.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="128.0" cy="832.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="183.9" cy="748.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="98.0" cy="49.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="268.0" cy="776.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="298.5" cy="409.6" r="1.6" fill="#8FD8FF" fill-opacity="0.37"/><circle cx="353.3" cy="535.8" r="1.9" fill="#8FD8FF" fill-opacity="0.45"/><circle cx="412.1" cy="174.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="21.9" cy="459.6" r="1.7" fill="#8FD8FF" fill-opacity="0.39"/><circle cx="350.2" cy="382.5" r="1.5" fill="#8FD8FF" fill-opacity="0.33"/><circle cx="224.4" cy="126.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="65.6" cy="540.2" r="1.9" fill="#8FD8FF" fill-opacity="0.47"/><circle cx="239.9" cy="748.1" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="38.6" cy="614.8" r="2.0" fill="#8FD8FF" fill-opacity="0.50"/><circle cx="240.0" cy="860.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="75.0" cy="381.7" r="1.5" fill="#8FD8FF" fill-opacity="0.33"/><circle cx="24.1" cy="282.7" r="1.3" fill="#8FD8FF" fill-opacity="0.29"/><circle cx="379.2" cy="202.6" r="1.3" fill="#8FD8FF" fill-opacity="0.27"/><circle cx="295.4" cy="719.7" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="128.0" cy="776.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="412.0" cy="44.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="-23.1" cy="214.5" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="17.4" cy="159.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="63.8" cy="577.8" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="180.6" cy="544.4" r="1.9" fill="#8FD8FF" fill-opacity="0.47"/><circle cx="156.0" cy="776.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="325.0" cy="692.2" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="15.8" cy="664.9" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="240.5" cy="690.5" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="172.6" cy="103.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="322.5" cy="583.7" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="189.2" cy="51.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="351.2" cy="107.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="111.1" cy="36.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="224.0" cy="476.1" r="1.7" fill="#8FD8FF" fill-opacity="0.41"/><circle cx="380.6" cy="692.8" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="295.6" cy="207.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="190.7" cy="263.0" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="245.8" cy="174.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="206.8" cy="316.7" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="338.8" cy="182.6" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="214.4" cy="533.1" r="1.9" fill="#8FD8FF" fill-opacity="0.45"/><circle cx="-3.1" cy="452.1" r="1.7" fill="#8FD8FF" fill-opacity="0.39"/><circle cx="244.5" cy="137.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="48.9" cy="103.3" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="100.0" cy="832.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="178.4" cy="463.6" r="1.7" fill="#8FD8FF" fill-opacity="0.41"/><circle cx="156.1" cy="748.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="100.1" cy="748.1" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="184.0" cy="860.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="41.2" cy="318.9" r="1.3" fill="#8FD8FF" fill-opacity="0.29"/><circle cx="324.0" cy="804.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="81.1" cy="483.2" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="248.4" cy="586.8" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="245.2" cy="534.8" r="1.9" fill="#8FD8FF" fill-opacity="0.45"/><circle cx="282.1" cy="489.0" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="128.0" cy="860.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="266.4" cy="663.9" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="373.4" cy="287.9" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="322.1" cy="404.3" r="1.5" fill="#8FD8FF" fill-opacity="0.35"/><circle cx="378.3" cy="67.8" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="380.4" cy="720.5" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="16.0" cy="832.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="337.1" cy="163.7" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="118.3" cy="332.0" r="1.5" fill="#8FD8FF" fill-opacity="0.33"/><circle cx="303.8" cy="54.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="363.3" cy="69.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="289.8" cy="138.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="115.2" cy="83.2" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="288.9" cy="605.6" r="2.0" fill="#8FD8FF" fill-opacity="0.50"/><circle cx="184.0" cy="691.0" r="2.2" fill="#8FD8FF" fill-opacity="0.54"/><circle cx="268.0" cy="888.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="28.6" cy="493.6" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="194.9" cy="486.7" r="1.7" fill="#8FD8FF" fill-opacity="0.41"/><circle cx="157.6" cy="662.7" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="279.3" cy="486.8" r="1.7" fill="#8FD8FF" fill-opacity="0.41"/><circle cx="170.5" cy="216.8" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="21.4" cy="526.0" r="1.9" fill="#8FD8FF" fill-opacity="0.45"/><circle cx="46.2" cy="303.4" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="296.0" cy="832.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="74.1" cy="610.1" r="2.0" fill="#8FD8FF" fill-opacity="0.50"/><circle cx="187.6" cy="551.0" r="1.9" fill="#8FD8FF" fill-opacity="0.47"/><circle cx="142.7" cy="299.9" r="1.4" fill="#8FD8FF" fill-opacity="0.31"/><circle cx="71.8" cy="719.7" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="217.4" cy="63.0" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="230.8" cy="505.8" r="1.8" fill="#8FD8FF" fill-opacity="0.43"/><circle cx="162.4" cy="607.3" r="2.0" fill="#8FD8FF" fill-opacity="0.50"/><circle cx="338.8" cy="163.1" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="25.5" cy="239.8" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="16.6" cy="189.0" r="1.2" fill="#8FD8FF" fill-opacity="0.26"/><circle cx="184.4" cy="720.3" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="296.9" cy="296.0" r="1.3" fill="#8FD8FF" fill-opacity="0.28"/><circle cx="245.2" cy="277.3" r="1.3" fill="#8FD8FF" fill-opacity="0.29"/><circle cx="129.8" cy="661.1" r="2.1" fill="#8FD8FF" fill-opacity="0.53"/><circle cx="352.0" cy="804.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="185.0" cy="581.6" r="2.0" fill="#8FD8FF" fill-opacity="0.49"/><circle cx="296.0" cy="888.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="128.0" cy="860.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><circle cx="260.8" cy="42.9" r="1.2" fill="#8FD8FF" fill-opacity="0.25"/><circle cx="100.0" cy="888.0" r="2.2" fill="#8FD8FF" fill-opacity="0.55"/><path d="M36 82V232" stroke="#8A9BB3" stroke-width="3" stroke-dasharray="1 8" stroke-linecap="round"/><path d="M36 232V832" stroke="url(#jm-road)" stroke-width="12" stroke-linecap="round" opacity=".45" filter="url(#jm-glow)"/><path d="M36 232V832" stroke="url(#jm-road)" stroke-width="4" stroke-linecap="round"/><path class="jm-flow" d="M36 232V832" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity=".9"/><g filter="url(#jm-drop)"><rect x="70" y="20" width="334" height="124" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M84 20.8H390" stroke="#8A9BB3" stroke-width="2.4" stroke-linecap="round"/><rect x="88" y="36.8" width="32" height="21" rx="10" fill="#8A9BB3" fill-opacity=".16"/><text x="103.75" y="52.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="700" fill="#8A9BB3" text-anchor="middle" letter-spacing="0" opacity="1">00</text><text x="130.0" y="52.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="600" fill="#8A9BB3" text-anchor="start" letter-spacing="1.3" opacity="1">AUSGANGSLAGE</text><text x="88" y="83.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.3" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">Heute</text><text x="88" y="106.10000000000001" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Einzeltools, offene</text><text x="88" y="126.05000000000001" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Fragen, kein Plan</text><g filter="url(#jm-drop)"><rect x="70" y="170" width="334" height="124" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M84 170.8H390" stroke="#5B95FF" stroke-width="2.4" stroke-linecap="round"/><rect x="88" y="186.8" width="32" height="21" rx="10" fill="#5B95FF" fill-opacity=".16"/><text x="103.75" y="202.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="700" fill="#5B95FF" text-anchor="middle" letter-spacing="0" opacity="1">01</text><text x="130.0" y="202.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="600" fill="#5B95FF" text-anchor="start" letter-spacing="1.3" opacity="1">ORIENTIERUNG</text><text x="88" y="233.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.3" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KI-Quick-Check</text><text x="88" y="256.1" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Standort in wenigen</text><text x="88" y="276.05" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Minuten bestimmen</text><g filter="url(#jm-drop)"><rect x="70" y="320" width="334" height="124" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M84 320.8H390" stroke="#7B6BFF" stroke-width="2.4" stroke-linecap="round"/><rect x="88" y="336.8" width="32" height="21" rx="10" fill="#7B6BFF" fill-opacity=".16"/><text x="103.75" y="352.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="700" fill="#7B6BFF" text-anchor="middle" letter-spacing="0" opacity="1">02</text><text x="130.0" y="352.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="600" fill="#7B6BFF" text-anchor="start" letter-spacing="1.3" opacity="1">STARTEN</text><text x="88" y="383.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.3" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KIONEXT X-Ray</text><text x="88" y="406.1" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">KI-Ist-Analyse auf</text><text x="88" y="426.05" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">allen sechs Ebenen</text><g filter="url(#jm-drop)"><rect x="70" y="470" width="334" height="124" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M84 470.8H390" stroke="#4C8DFF" stroke-width="2.4" stroke-linecap="round"/><rect x="88" y="486.8" width="32" height="21" rx="10" fill="#4C8DFF" fill-opacity=".16"/><text x="103.75" y="502.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="700" fill="#4C8DFF" text-anchor="middle" letter-spacing="0" opacity="1">03</text><text x="130.0" y="502.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="600" fill="#4C8DFF" text-anchor="start" letter-spacing="1.3" opacity="1">BAUEN</text><text x="88" y="533.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.3" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KIONEXT X-Pedition</text><text x="88" y="556.1" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Roadmap, Governance,</text><text x="88" y="576.05" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">erster Pilot live</text><g filter="url(#jm-drop)"><rect x="70" y="620" width="334" height="124" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M84 620.8H390" stroke="#E6007E" stroke-width="2.4" stroke-linecap="round"/><rect x="88" y="636.8" width="32" height="21" rx="10" fill="#E6007E" fill-opacity=".16"/><text x="103.75" y="652.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="700" fill="#E6007E" text-anchor="middle" letter-spacing="0" opacity="1">04</text><text x="130.0" y="652.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="600" fill="#E6007E" text-anchor="start" letter-spacing="1.3" opacity="1">SKALIEREN</text><text x="88" y="683.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.3" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">KIONEXT X-Pand</text><text x="88" y="706.1" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Rollout in die Breite,</text><text x="88" y="726.05" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Teams befähigt</text><g filter="url(#jm-drop)"><rect x="70" y="770" width="334" height="124" rx="14" fill="#0C1D3A" fill-opacity="0.86" stroke="#FFFFFF" stroke-opacity="0.1"/></g><path d="M84 770.8H390" stroke="#FF5CAE" stroke-width="2.4" stroke-linecap="round"/><rect x="88" y="786.8" width="32" height="21" rx="10" fill="#FF5CAE" fill-opacity=".16"/><text x="103.75" y="802.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="700" fill="#FF5CAE" text-anchor="middle" letter-spacing="0" opacity="1">✓</text><text x="130.0" y="802.025" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="11.6" font-weight="600" fill="#FF5CAE" text-anchor="start" letter-spacing="1.3" opacity="1">ZIEL</text><text x="88" y="833.0" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="17.3" font-weight="700" fill="#FFFFFF" text-anchor="start" letter-spacing="0" opacity="1">Erfolgreiche Umsetzung</text><text x="88" y="856.1" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">KI im Alltag, messbarer</text><text x="88" y="876.05" font-family="Poppins, Montserrat, 'Segoe UI', Arial, sans-serif" font-size="14.3" font-weight="400" fill="#B4C3D8" text-anchor="start" letter-spacing="0" opacity="1">Nutzen, skalierbar</text><circle cx="36" cy="82" r="9" fill="#081734" stroke="#8A9BB3" stroke-width="2.5" stroke-dasharray="3 3"/><circle cx="36" cy="232" r="20" fill="#5B95FF" fill-opacity=".14"/><circle cx="36" cy="232" r="10" fill="#081734" stroke="#5B95FF" stroke-width="3"/><circle cx="36" cy="232" r="3.5" fill="#5B95FF"/><circle cx="36" cy="382" r="20" fill="#7B6BFF" fill-opacity=".14"/><circle cx="36" cy="382" r="10" fill="#081734" stroke="#7B6BFF" stroke-width="3"/><circle cx="36" cy="382" r="3.5" fill="#7B6BFF"/><circle cx="36" cy="532" r="20" fill="#4C8DFF" fill-opacity=".14"/><circle cx="36" cy="532" r="10" fill="#081734" stroke="#4C8DFF" stroke-width="3"/><circle cx="36" cy="532" r="3.5" fill="#4C8DFF"/><circle cx="36" cy="682" r="20" fill="#E6007E" fill-opacity=".14"/><circle cx="36" cy="682" r="10" fill="#081734" stroke="#E6007E" stroke-width="3"/><circle cx="36" cy="682" r="3.5" fill="#E6007E"/><circle cx="36" cy="832" r="70" fill="url(#jm-aura)"/><circle class="jm-ring" cx="36" cy="832" r="22" fill="none" stroke="#FF5CAE" stroke-width="2"/><circle cx="36" cy="832" r="30" fill="none" stroke="#FF5CAE" stroke-opacity=".35" stroke-width="1"/><circle cx="36" cy="832" r="18" fill="#FF5CAE"/><path d="M29 832L34 837L44 827" fill="none" stroke="#0E1F3D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <p class="claim step-claim"><span class="cw">Starten.</span></p>
+        <h3>Wert erkennen</h3>
+        <p class="xray"><strong>KIONEXT X-Ray</strong> – die KI-Ist-Analyse</p>
+        <ul><li>Durchleuchtung auf sechs Ebenen</li><li>Prozesse mit Potenzial</li><li>Use Cases, Risiken, Chancen</li></ul>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <p class="claim step-claim"><span class="cm">Bauen.</span></p>
+        <h3>Wert planen und bauen</h3>
+        <p class="xray"><strong>KIONEXT X-Pedition</strong> – von der Roadmap zur ersten Lösung</p>
+        <ul><li>Priorisierte Use Cases und Business Cases</li><li>Roadmap für 12–24 Monate und Governance-Modell</li><li>Prozessdesign und Plattformauswahl</li><li>Erste Piloten und KI-Avatare im Einsatz</li></ul>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <p class="claim step-claim"><span class="cb">Skalieren.</span></p>
+        <h3>Wert heben</h3>
+        <p class="xray"><strong>KIONEXT X-Pand</strong> – KI in die Breite bringen</p>
+        <ul><li>Rollout in weitere Bereiche</li><li>Enablement, Training und Workshops</li><li>Richtlinien und Change</li><li>Erfolgsmessung und neue Use Cases</li></ul>
+      </div>
+    </div>
+
+    <div class="xr" id="xray">
+      <div class="xr-head">
+        <p class="xray"><strong>KIONEXT X-Ray</strong> – die KI-Ist-Analyse im Detail</p>
+        <h3 style="font-size:clamp(24px,3vw,32px)">Wir schauen unter die Oberfläche.</h3>
+        <p class="muted">Der X-Ray beginnt mit Ihrer Selbsteinschätzung im kostenlosen KI-Quick-Check. Danach prüfen wir gemeinsam, was davon im Alltag wirklich trägt: mit Gesprächen, Belegen und einem Blick in Ihre Prozesse. So wird aus einem Gefühl ein belastbarer Befund.</p>
+      </div>
+      <div class="xr-grid">
+        <div>
+          <h4 class="xr-sub">So läuft der X-Ray ab</h4>
+          <ol class="ladder">
+            <li><span class="n">1</span><div><h4>KI-Quick-Check</h4><p>Der Startpunkt: Ihre kostenlose Selbsteinschätzung auf den sechs Ebenen, in wenigen Minuten erledigt.</p></div><a class="brandtag" href="#check" style="text-decoration:none">Jetzt starten</a></li>
+            <li><span class="n">2</span><div><h4>KI-Anamnesebogen</h4><p>Ihr Team erfasst strukturiert, wo KI heute steht – als Vorbereitung auf die Gespräche.</p></div></li>
+            <li><span class="n">3</span><div><h4>Interviews</h4><p>Gespräche mit der Geschäftsführung und zwei bis drei Schlüsselpersonen aus den Fachbereichen.</p></div></li>
+            <li><span class="n">4</span><div><h4>Bestandsaufnahme</h4><p>Welche Tools, Daten und Richtlinien es gibt und wo KI bereits genutzt wird – auch inoffiziell als „Schatten-KI“.</p></div></li>
+            <li><span class="n">5</span><div><h4>Prozess-Walkthrough</h4><p>Zwei bis drei zentrale Abläufe gemeinsam durchgehen und Potenziale markieren.</p></div></li>
+            <li><span class="n">6</span><div><h4>X-Ray-Befund</h4><p>Reifegrad je Ebene als Heatmap, die größten Hebel und Risiken, Top-5-Maßnahmen und eine klare Empfehlung für die X-Pedition.</p></div></li>
+          </ol>
+        </div>
+        <div>
+          <h4 class="xr-sub">Die sechs Ebenen</h4>
+          <ul class="xr-dims">
+            <li><b>Wert</b>Wo entsteht wirtschaftlicher Nutzen? Ziele, Budget, Rückendeckung</li>
+            <li><b>Abläufe</b>Welche Prozesse und Engpässe? Zeitfresser, Medienbrüche</li>
+            <li><b>Intelligenz</b>Welche Aufgabe übernimmt die KI? Use Cases und ihr Nutzen</li>
+            <li><b>Daten</b>Welche Daten und welches Wissen? Qualität, Zugang, Tools</li>
+            <li><b>Mensch</b>Wer arbeitet wie mit KI? Kompetenz, Akzeptanz, Verantwortung</li>
+            <li><b>Steuerung</b>Welche Regeln und Kennzahlen? Richtlinien, Freigaben, EU AI Act</li>
+          </ul>
+          <div class="notice" style="margin-top:20px"><strong>Quick-Check oder X-Ray?</strong> Der Quick-Check zeigt, wie Sie Ihr Unternehmen selbst einschätzen. Der X-Ray zeigt, wo es tatsächlich steht – mit Belegen statt Bauchgefühl.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="va-head" id="wertanalyse">
+      <div style="display:grid;gap:12px;max-width:62ch">
+        <h3 style="font-size:clamp(24px,3vw,32px)">Der Einstieg: die KI-Wertanalyse</h3>
+        <p class="muted">Jede Zusammenarbeit beginnt hier. In der Wertanalyse durchleuchten wir Ihr Unternehmen mit dem KIONEXT X-Ray, bewerten Ihre Use Cases und legen die nächsten Schritte fest. Sie wählen, wie tief wir gehen.</p>
+      </div>
+      <a class="btn btn-primary" href="#kontakt" data-topic="KI-Wertanalyse (Kompakt, Intensiv oder Plus)">Wertanalyse anfragen</a>
+    </div>
+    <div class="variants">
+      <div class="variant">
+        <h4>Kompakt</h4>
+        <p>Der schnelle Überblick für die Geschäftsführung.</p>
+        <ul><li>KIONEXT X-Ray: die KI-Ist-Analyse auf sechs Ebenen</li><li>Top-5-Maßnahmen</li><li>Kurzbericht mit Empfehlung</li></ul>
+      </div>
+      <div class="variant feat">
+        <h4>Intensiv</h4>
+        <p>Die gründliche Analyse mit Ihren Fachbereichen.</p>
+        <ul><li>Alles aus Kompakt</li><li>Use-Case-Bewertung nach Nutzen und Umsetzbarkeit</li><li>KIONEXT X-Pedition als Entwurf mit 90-Tage-Plan</li></ul>
+      </div>
+      <div class="variant">
+        <h4>Plus</h4>
+        <p>Analyse und Start der Umsetzung aus einer Hand.</p>
+        <ul><li>Alles aus Intensiv</li><li>30 Tage Umsetzungsbegleitung</li><li>Gemeinsamer Start der ersten Maßnahmen</li></ul>
+      </div>
+    </div>
+
+    <div class="deliver">
+      <div>
+        <h3>Was Sie in der Hand halten</h3>
+        <p class="muted" style="margin-top:10px">Konkrete Ergebnisse statt Foliensammlung. Je nach Umfang endet die Zusammenarbeit mit Dokumenten, mit denen Ihr Team weiterarbeiten kann.</p>
+      </div>
+      <div class="chips">
+        <span class="chip">X-Ray-Befund</span>
+        <span class="chip">Wertanalyse-Bericht</span>
+        <span class="chip">Use-Case-Portfolio mit Priorisierungsmatrix</span>
+        <span class="chip">X-Pedition: 12- bis 24-Monats-Roadmap</span>
+        <span class="chip">Governance- und Rollenmodell</span>
+        <span class="chip">Tool- und Plattformprinzipien</span>
+        <span class="chip">KPI-Set zur Wirkungsmessung</span>
+        <span class="chip">Enablement-Plan</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVATARE -->
+<section id="avatare">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Digitale Mitarbeiter. Für echte Aufgaben.</h2>
+      <p class="lead">Ein KIONEXT-Avatar ist kein beliebiger Chatbot, sondern eine definierte digitale Rolle: mit Auftrag, freigegebenem Wissen, klaren Aktionen und menschlicher Kontrolle. Wählen Sie eine Rolle, um den Bauplan zu sehen.</p>
+    </div>
+    <div class="av-grid">
+      <div class="av-tabs" role="tablist" aria-label="Avatar-Rollen" id="avTabs"></div>
+      <div class="av-panel" role="tabpanel" id="avPanel" aria-live="polite"></div>
+    </div>
+    <div class="av-foot">
+      <div><h4>Standardkern plus Ihr Wissen</h4><p>Jeder Avatar entsteht aus einem wiederholbaren Bauplan – ergänzt um Ihre Prozesse, Dokumente und Regeln.</p></div>
+      <div><h4>Pilot in 4–8 Wochen</h4><p>Ein konkreter Use Case, ein messbares Ziel, eine echte Demo mit Ihren Daten statt eines Talking Heads.</p></div>
+      <div><h4>Kontrollierbar von Anfang an</h4><p>Freigaben, Eskalationswege und Versionierung sind Teil des Produkts, kein nachträglicher Compliance-Block.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="leistungen" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Hier wird umgesetzt.</h2>
+      <p class="lead">KIONEXT bringt KI aus der Folie in den Betrieb. Jede Leistung beginnt mit einem klaren geschäftlichen Problem und endet mit einem laufenden, messbaren Ergebnis in Ihrem Unternehmen. Filtern Sie nach Schritt der KI-Wertarchitektur.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Nach Phase filtern">
+      <button class="filter" aria-pressed="true" data-f="all">Alle Leistungen</button>
+      <button class="filter" aria-pressed="false" data-f="diagnose">Wert erkennen</button>
+      <button class="filter" aria-pressed="false" data-f="design">Wert planen</button>
+      <button class="filter" aria-pressed="false" data-f="delivery">Wert heben</button>
+    </div>
+    <div class="pf" id="pf"></div>
+
+    <div class="formats">
+      <h3 class="claim"><span class="cw">Starten.</span> <span class="cm">Bauen.</span> <span class="cb">Skalieren.</span></h3>
+      <ol class="ladder">
+        <li><span class="n">0</span><div><h4>KI-Quick-Check</h4><p>Kostenlose Selbsteinschätzung in wenigen Minuten – der unverbindliche Anfang und der erste Schritt des X-Ray.</p></div><span class="brandtag">Kostenlos</span></li>
+        <li><span class="n">1</span><div><h4>Starten: KIONEXT X-Ray</h4><p>Die Zusammenarbeit beginnt mit der KI-Wertanalyse in den Varianten Kompakt, Intensiv und Plus – und darin mit dem X-Ray. Sie wissen danach, wo KI bei Ihnen Wert schafft und in welcher Reihenfolge.</p></div><span class="brandtag k">KIONEXT</span></li>
+        <li><span class="n">2</span><div><h4>Bauen: KIONEXT X-Pedition</h4><p>Roadmap, Governance, Prozessdesign, Pilot und KI-Avatar – bis die erste Lösung im Alltag läuft.</p></div><span class="brandtag k">KIONEXT</span></li>
+        <li><span class="n">3</span><div><h4>Skalieren: KIONEXT X-Pand</h4><p>Vom ersten Erfolg zum Betriebsmodell: Rollout, Befähigung Ihrer Teams, neue Use Cases und Erfolgsmessung.</p></div><span class="brandtag k">KIONEXT</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- CHECK -->
+<section id="check" class="check">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Wo steht Ihr Unternehmen wirklich?</h2>
+      <p class="lead">Der KI-Quick-Check ist der erste Schritt der KI-Wertarchitektur. Schätzen Sie die sechs Ebenen der KI-Wertarchitektur ehrlich ein – Sie sehen sofort Ihre Heatmap und die drei wichtigsten nächsten Schritte. Ihre Angaben bleiben in Ihrem Browser.</p>
+    </div>
+    <div class="check-grid">
+      <div class="dims" id="dims"></div>
+      <aside class="result" aria-live="polite">
+        <p class="muted" style="font-size:14px">Ihr Reifegrad</p>
+        <div class="score-row"><div class="score" id="score">3,0<small>/5</small></div><div class="stage" id="stage">Strukturieren</div></div>
+        <p class="stage-desc" id="stageDesc"></p>
+        <div class="heat" id="heat"></div>
+        <div class="recs"><h4>Ihre nächsten drei Schritte</h4><ol id="recs"></ol></div>
+        <a class="btn btn-primary" href="#kontakt" id="checkCta">In der KI-Wertanalyse vertiefen</a>
+        <p class="fine">Eine Selbsteinschätzung zur Orientierung, kein Audit. In der KI-Wertanalyse prüfen wir jede Ebene gemeinsam mit Ihrem Team.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ENABLEMENT -->
+<section id="enablement">
+  <div class="wrap en-grid">
+    <div>
+      <div class="sec-head">
+        <h2>KI-Kompetenz, die man nachweisen kann.</h2>
+        <p class="lead">Seit dem 27. Juli 2026 verpflichtet Art. 4 EU AI Act Anbieter und Betreiber von KI-Systemen, Maßnahmen zur Förderung der KI-Kompetenz ihres Personals zu ergreifen – passend zu Rolle, Erfahrung und Einsatzkontext. Entscheidend ist, dass Ihre Maßnahmen nachvollziehbar dokumentiert sind.</p>
+      </div>
+      <p class="muted">Enablement bei KIONEXT ist auf Ihr Unternehmen zugeschnitten: Ihre Rollen, Ihre Tools, Ihre Richtlinien. Unsere Online-Schulungsreihe ist modular, auf Ihre Rollen anpassbar und dokumentiert jede Teilnahme – produziert mit KI-Avatar, damit sie mit Ihrem Unternehmen mitwachsen kann.</p>
+      <div class="workshop"><h4>Workshop „KI als Sparringspartner“</h4><p>Ein Praxisworkshop für Mitarbeitende, persönlich durchgeführt: KI als Denk- und Arbeitspartner im eigenen Alltag nutzen – sicher, kritisch und mit echten Aufgaben aus Ihrem Unternehmen.</p></div>
+      <div class="notice"><strong>Klar formuliert:</strong> Sie erhalten ein Teilnahmezertifikat über eine absolvierte KI-Kompetenzschulung – keine behördliche oder gesetzlich anerkannte „EU-AI-Act-Zertifizierung“.</div>
+      <div class="cert">
+        <h4>Was das Zertifikat dokumentiert</h4>
+        <div class="chips">
+          <span class="chip">Name</span><span class="chip">Kurs und Lernziele</span><span class="chip">Umfang und Datum</span><span class="chip">Curriculum-Version</span><span class="chip">Testergebnis</span><span class="chip">Zertifikats-ID</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:18px">Die acht Module</h3>
+      <ol class="modules">
+        <li><span>1</span>KI verstehen: Begriffe, Fähigkeiten und Grenzen</li>
+        <li><span>2</span>Generative KI im Arbeitsalltag</li>
+        <li><span>3</span>Risiken: Halluzinationen, Bias, Datenschutz, Vertraulichkeit</li>
+        <li><span>4</span>EU AI Act und Verantwortlichkeiten im Unternehmen</li>
+        <li><span>5</span>Sicheres Prompting und Qualitätskontrolle</li>
+        <li><span>6</span>Unternehmensrichtlinien und erlaubte Tools</li>
+        <li><span>7</span>Rollenbezogene Praxisfälle</li>
+        <li><span>8</span>Wissenstest und Teilnahmebestätigung</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights" class="alt">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Erst verstehen? Zur KI-Akademie.</h2>
+      <p class="lead">Wissen und Umsetzung haben bei uns zwei Adressen. Bei StrategiemitKI, unserer KI-Akademie, finden Sie Faktenchecks, die Whitepaper-Reihe und Werkzeuge zum Selbermachen. Fakten. Klarheit. Vorsprung. Wenn aus Wissen ein Projekt werden soll, ist KIONEXT Ihr Partner.</p>
+    </div>
+    <div class="ins-grid">
+      <a class="paper" href="index.html"><div><h3>KI-Faktencheck</h3><p>Was an KI-Versprechen stimmt und was Hype ist – nüchtern eingeordnet für Entscheider.</p></div><span class="src">StrategiemitKI</span></a>
+      <a class="paper" href="index.html"><div><h3>Whitepaper-Reihe</h3><p>Von den Chancen für den Mittelstand über die KI-Roadmap bis zur KI-Kompetenz nach EU AI Act.</p></div><span class="src">StrategiemitKI</span></a>
+      <a class="paper" href="index.html"><div><h3>Werkzeuge</h3><p>Prompt-Bibliothek und KI-Anamnesebogen, mit denen Sie selbst loslegen können.</p></div><span class="src">StrategiemitKI</span></a>
+    </div>
+    <div class="funnel" aria-label="Von der Akademie zur Umsetzung">
+      <span class="f hl">Verstehen bei StrategiemitKI</span>
+      <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h14M11 1l5 5-5 5" fill="none" stroke="#6B7C93" stroke-width="1.5"/></svg>
+      <span class="f">KI-Quick-Check</span>
+      <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h14M11 1l5 5-5 5" fill="none" stroke="#6B7C93" stroke-width="1.5"/></svg>
+      <span class="f">KI-Wertanalyse</span>
+      <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6h14M11 1l5 5-5 5" fill="none" stroke="#6B7C93" stroke-width="1.5"/></svg>
+      <span class="f end">Umsetzung mit KIONEXT</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="ueber">
+  <div class="wrap about">
+    <div>
+      <div class="sec-head"><h2>Die Brücke zwischen Management und angewandter KI.</h2></div>
+      <div class="vm">
+        <div><h3>Vision</h3><p>Unternehmen sollen KI nicht nur testen, sondern strukturiert, verantwortungsvoll und wirtschaftlich wirksam in ihre Organisation integrieren können.</p></div>
+        <div><h3>Mission</h3><p>Wir übersetzen KI in klare Entscheidungen, belastbare Roadmaps und konkrete digitale Arbeitsmodelle – von der Strategie bis zum operativen KI-Avatar.</p></div>
+        <div style="border-left-color:#fff"><h3>Positionierung</h3><p>Strategisch genug für die Geschäftsführung, praktisch genug für die Implementierung und skalierbar durch standardisierte KI-Avatare.</p></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="margin-bottom:12px;color:var(--muted);font-size:17px;font-weight:500">Woran wir uns messen lassen</h3>
+      <ul class="principles">
+        <li>Nutzen <em>vor</em> Hype</li>
+        <li>Vertrauen <em>vor</em> Black Box</li>
+        <li>Skalierung <em>vor</em> Einzellösung</li>
+        <li>Menschen befähigen <em>statt</em> nur Tools ausrollen</li>
+        <li>Governance <em>von Beginn an</em></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="kontakt" class="contact">
+  <div class="wrap ct-grid">
+    <div class="sec-head">
+      <h2>Lassen Sie uns über Ihren nächsten Schritt sprechen.</h2>
+      <p class="lead">Das Erstgespräch ist kostenlos und dauert etwa 30 Minuten. Sie schildern Ihre Ausgangslage, wir zeigen Ihnen, welche Variante der KI-Wertanalyse passt – auch wenn das Ergebnis lautet: noch nicht.</p>
+    </div>
+    <form id="form" novalidate>
+      <div class="row2">
+        <label>Name<input type="text" name="name" autocomplete="name" required></label>
+        <label>Unternehmen<input type="text" name="firma" autocomplete="organization"></label>
+      </div>
+      <label>E-Mail<input type="email" name="email" autocomplete="email" required></label>
+      <label>Worum geht es?
+        <select name="thema">
+          <option>KI-Wertanalyse (Kompakt, Intensiv oder Plus)</option>
+          <option>KI-Strategie und Roadmap</option>
+          <option>KI-Avatar / digitaler Mitarbeiter</option>
+          <option>KI-Governance und EU AI Act</option>
+          <option>Workshop „KI als Sparringspartner“</option>
+          <option>Schulung und AI Literacy</option>
+          <option>Ergebnis meines KI-Quick-Checks</option>
+          <option>Etwas anderes</option>
+        </select>
+      </label>
+      <label>Ihre Nachricht<textarea name="nachricht" id="msg"></textarea></label>
+      <button class="btn btn-primary" type="submit" style="justify-self:start">Anfrage per E-Mail senden</button>
+      <p class="form-msg" id="formMsg">Ihr E-Mail-Programm öffnet sich mit der vorbereiteten Nachricht.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap ft">
+    <div class="brand" style="gap:14px"><svg width="112" height="24" viewBox="0 0 372 80" role="img" aria-label="KIONEXT"><defs>
+<linearGradient id="gft" gradientUnits="userSpaceOnUse" x1="8" y1="8" x2="56" y2="56"><stop offset="0" stop-color="#1F6BFF"/><stop offset=".55" stop-color="#7B2FE0"/><stop offset="1" stop-color="#E6007E"/></linearGradient>
+<linearGradient id="sft" gradientUnits="userSpaceOnUse" x1="0" y1="6" x2="0" y2="58"><stop offset="0" stop-color="#1F6BFF"/><stop offset="1" stop-color="#3D4BF0"/></linearGradient>
+<linearGradient id="xft" gradientUnits="userSpaceOnUse" x1="203" y1="0" x2="233" y2="0"><stop offset="0" stop-color="#1F6BFF"/><stop offset=".5" stop-color="#7B2FE0"/><stop offset="1" stop-color="#E6007E"/></linearGradient>
+<clipPath id="cft"><rect x="-10" y="0" width="400" height="40"/></clipPath>
+</defs><g transform="scale(1.25)"><g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="11">
+<path d="M14 11V53" stroke="url(#sft)"/>
+<path d="M34 34L50 53" stroke="url(#gft)"/>
+<path d="M50 11L14 53" stroke="url(#gft)"/>
+</g></g><g transform="translate(104,18) scale(0.95)"><g clip-path="url(#cft)" fill="none" stroke-width="6" stroke-linecap="butt" stroke-linejoin="miter"><path d="M3 -5V45M34 -3L3 25M15 15L36 43" stroke="#E9EEF5"/><path d="M50 -5V45" stroke="#E9EEF5"/><circle cx="84" cy="20" r="17" stroke="#E9EEF5"/><path d="M120 45V0L146 40V-5" stroke="#E9EEF5" stroke-linejoin="miter"/><path d="M190 3H164V37H190M164 20H184" stroke="#E9EEF5"/><path d="M203 -2L233 42M233 -2L203 42" stroke="url(#xft)"/><path d="M245 3H277M261 3V45" stroke="#E9EEF5"/></g></g></svg><span class="claim"><span class="cw">Starten.</span> <span class="cm">Bauen.</span> <span class="cb">Skalieren.</span></span></div>
+    <nav aria-label="Rechtliches">
+      <a href="index.html">StrategiemitKI – unsere KI-Akademie</a>
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <span>© <span id="yr"></span> KIONEXT</span>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var CONTACT_MAIL = "kontakt@kionext.de"; // hier die echte Adresse eintragen
+
+  // Mobile nav
+  var mb = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
+  mb.addEventListener("click", function(){ var o = nav.classList.toggle("open"); mb.setAttribute("aria-expanded", o); mb.textContent = o ? "Schließen" : "Menü"; });
+  nav.addEventListener("click", function(e){ if(e.target.tagName === "A"){ nav.classList.remove("open"); mb.setAttribute("aria-expanded", false); mb.textContent = "Menü"; } });
+
+  // Avatare
+  var roles = [
+    { id:"service", name:"Kundenservice", sub:"FAQ, Vorqualifizierung, Antwortentwürfe",
+      intro:"Entlastet Ihr Serviceteam bei wiederkehrenden Anfragen und übergibt sauber, wenn ein Mensch gefragt ist.",
+      bp:{ Rolle:"Beantwortet Standardanfragen, qualifiziert vor und entwirft Antworten im Ton Ihres Hauses.", Wissen:"FAQs, Produktdokumentation, Servicerichtlinien, freigegebene Textbausteine.", Aktionen:"Liest Tickets, schlägt Antworten vor, kategorisiert und dokumentiert.", Guardrails:"Keine Kulanz- oder Preiszusagen ohne Freigabe; Eskalation bei Beschwerden.", Interface:"Chat im Helpdesk oder auf der Website, Integration ins Ticketsystem.", KPI:"Lösungsquote, Bearbeitungszeit, Kundenzufriedenheit." } },
+    { id:"vertrieb", name:"Vertrieb", sub:"Gesprächsvorbereitung, Follow-ups",
+      intro:"Bereitet Ihr Vertriebsteam auf Gespräche vor und sorgt dafür, dass kein Follow-up liegen bleibt.",
+      bp:{ Rolle:"Erstellt Briefings, schärft die Angebotsargumentation und qualifiziert Leads.", Wissen:"Produktwissen, Preislogik, Referenzargumente, Wettbewerbsinfos.", Aktionen:"Gesprächsvorbereitung, Follow-up-Entwürfe, Notizvorschläge fürs CRM.", Guardrails:"Keine Konditionen ohne Freigabe; Kundendaten nur aus freigegebenen Quellen.", Interface:"Integration ins CRM, Chat in Teams oder Slack.", KPI:"Vorbereitungszeit, Follow-up-Quote, Zeit bis zum Angebot." } },
+    { id:"hr", name:"HR", sub:"Onboarding, Richtlinien",
+      intro:"Beantwortet die Fragen, die HR jede Woche zehnmal hört – verlässlich und auf Basis Ihrer Regeln.",
+      bp:{ Rolle:"Begleitet das Onboarding und beantwortet standardisierte Mitarbeiterfragen.", Wissen:"Mitarbeiterhandbuch, Betriebsvereinbarungen, Lernpfade, Formulare.", Aktionen:"Beantwortet, verweist auf Dokumente, sammelt offene Fragen für HR.", Guardrails:"Keine Einzelfallentscheidungen; sensible Themen gehen direkt an HR.", Interface:"Chat im Intranet oder Mitarbeiterportal.", KPI:"Entlastung des HR-Postfachs, Onboarding-Dauer, Zufriedenheit." } },
+    { id:"it", name:"IT / CyberGuard", sub:"Security-Awareness, Incidents",
+      intro:"CyberGuard macht Sicherheitsrichtlinien zugänglich und nimmt Vorfälle strukturiert auf, bevor sie eskalieren.",
+      bp:{ Rolle:"Beantwortet Sicherheits- und Standardfragen, schult Awareness, qualifiziert Vorfälle vor.", Wissen:"IT-Richtlinien, Notfallplan, freigegebene Tool-Liste, Anleitungen.", Aktionen:"Nimmt Vorfälle strukturiert auf, gibt Hilfestellung, eskaliert an die IT.", Guardrails:"Keine Systemänderungen; sofortige Eskalation bei Verdacht auf Angriff.", Interface:"Chat und Ticketsystem, optional Voice.", KPI:"Meldezeit, Erstlösungsquote, Awareness-Fortschritt." } }
+  ];
+  var tabs = document.getElementById("avTabs"), panel = document.getElementById("avPanel");
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]; }); }
+  roles.forEach(function(r, i){
+    var b = document.createElement("button");
+    b.className = "av-tab"; b.setAttribute("role","tab"); b.id = "tab-"+r.id;
+    b.setAttribute("aria-controls","avPanel");
+    b.innerHTML = esc(r.name) + "<small>" + esc(r.sub) + "</small>";
+    b.addEventListener("click", function(){ showRole(i); });
+    b.addEventListener("keydown", function(e){
+      if(e.key === "ArrowDown" || e.key === "ArrowRight"){ e.preventDefault(); showRole((i+1)%roles.length, true); }
+      if(e.key === "ArrowUp" || e.key === "ArrowLeft"){ e.preventDefault(); showRole((i-1+roles.length)%roles.length, true); }
+    });
+    tabs.appendChild(b);
+  });
+  function showRole(i, focus){
+    var r = roles[i];
+    Array.prototype.forEach.call(tabs.children, function(t, j){ t.setAttribute("aria-selected", j===i); t.tabIndex = j===i ? 0 : -1; });
+    if(focus) tabs.children[i].focus();
+    panel.setAttribute("aria-labelledby", "tab-"+r.id);
+    var cells = Object.keys(r.bp).map(function(k){ return "<div><dt>"+k+"</dt><dd>"+esc(r.bp[k])+"</dd></div>"; }).join("");
+    panel.innerHTML = "<h3>"+esc(r.name)+"-Assistent</h3><p class='muted'>"+esc(r.intro)+"</p><dl class='bp'>"+cells+"</dl>";
+  }
+  showRole(0);
+
+  // Portfolio
+  var services = [
+    { n:"KI-Wertanalyse & Strategie", p:["diagnose","design"], s:"Reifegrad, Use-Case-Bewertung, Business Cases und Roadmap.",
+      prob:"KI-Initiativen laufen nebeneinander her, ohne gemeinsames Ziel und ohne Priorisierung.", res:"Eine Strategie, die Geschäftsführung und Fachbereiche gemeinsam tragen, mit 12- bis 24-Monats-Roadmap." },
+    { n:"KI-Governance", p:["design"], s:"Rollen, Richtlinien, Freigaben, Risiko- und Tool-Governance.",
+      prob:"Unklar, wer was mit welchen Tools darf – und was der EU AI Act konkret verlangt.", res:"Ein schlankes Regelwerk mit Rollen, Freigabeprozess und dokumentierten Verantwortlichkeiten." },
+    { n:"KI-Avatare", p:["delivery"], s:"Digitale Mitarbeiter für definierte Rollen und Wissensdomänen.",
+      prob:"Fachkräfte verbringen zu viel Zeit mit wiederkehrender Wissensarbeit.", res:"Ein lauffähiger digitaler Mitarbeiter mit messbarer Entlastung und klaren Guardrails." },
+    { n:"Prozessdesign", p:["diagnose","design"], s:"Analyse und Neugestaltung wissensintensiver Abläufe.",
+      prob:"Prozesse wurden für eine Welt ohne KI gebaut – KI wird nur aufgesetzt, nicht integriert.", res:"Neu gestaltete Abläufe, in denen Mensch und KI klar verteilte Aufgaben haben." },
+    { n:"Enablement", p:["delivery"], s:"Maßgeschneidert für Ihr Team: Workshop „KI als Sparringspartner“, Führungskräfteformate und KI-Kompetenzschulung.",
+      prob:"Die Kompetenz im Unternehmen ist ungleich verteilt; Art. 4 EU AI Act verlangt Nachweise.", res:"Geschulte Teams mit dokumentierter Teilnahme und rollenbezogenen Praxisfällen." },
+    { n:"Implementierung", p:["delivery"], s:"Pilotierung, Plattformauswahl und Integrationsbegleitung.",
+      prob:"Die Auswahl an Plattformen ist groß, die Integration in bestehende Systeme schwierig.", res:"Eine passende Plattform, ein erfolgreicher Pilot und ein Plan für die Skalierung." },
+    { n:"Skalierung & Begleitung", p:["delivery"], s:"Betrieb, Weiterentwicklung und neue Use Cases nach dem ersten Erfolg.",
+      prob:"Der Pilot läuft, aber der Schritt in die Breite des Unternehmens bleibt aus.", res:"Ein KI-Betriebsmodell mit festen Verantwortlichkeiten, Erfolgskennzahlen und einem wachsenden Use-Case-Portfolio." }
+  ];
+  var label = { diagnose:["Erkennen","d1"], design:["Planen","d2"], delivery:["Heben","d3"] };
+  var pf = document.getElementById("pf");
+  services.forEach(function(sv, i){
+    var tags = sv.p.map(function(p){ return "<span class='tag "+label[p][1]+"'>"+label[p][0]+"</span>"; }).join("");
+    var el = document.createElement("div");
+    el.className = "pf-item"; el.dataset.p = sv.p.join(" ");
+    el.innerHTML =
+      "<button class='pf-btn' aria-expanded='false' aria-controls='pfb"+i+"'><h3>"+esc(sv.n)+"</h3><span class='sum'>"+esc(sv.s)+"</span>"+
+      "<span class='pf-right'><span class='pf-tags'>"+tags+"</span><span class='pf-plus' aria-hidden='true'><svg width='12' height='12' viewBox='0 0 12 12'><path d='M6 1v10M1 6h10' stroke='currentColor' stroke-width='1.6'/></svg></span></span></button>"+
+      "<div class='pf-body' id='pfb"+i+"'><div class='pb'><div><h4>Das Problem</h4><p>"+esc(sv.prob)+"</p></div><div><h4>Das Ergebnis</h4><p>"+esc(sv.res)+"</p></div></div></div>";
+    el.querySelector(".pf-btn").addEventListener("click", function(){
+      var o = el.classList.toggle("open"); this.setAttribute("aria-expanded", o);
+    });
+    pf.appendChild(el);
+  });
+  document.querySelectorAll(".filter").forEach(function(f){
+    f.addEventListener("click", function(){
+      document.querySelectorAll(".filter").forEach(function(x){ x.setAttribute("aria-pressed", x===f); });
+      var v = f.dataset.f;
+      pf.querySelectorAll(".pf-item").forEach(function(it){ it.hidden = !(v==="all" || it.dataset.p.indexOf(v) > -1); });
+    });
+  });
+
+  // KI-Quick-Check
+  var dims = [
+    { k:"Wert", q:"Ist klar, wo KI wirtschaftlichen Nutzen stiften soll – mit Zielen, Budget und Rückendeckung?", rec:"Ein KI-Zielbild mit der Geschäftsführung festlegen und den erwarteten Nutzen beziffern." },
+    { k:"Abläufe", q:"Kennen Sie die Prozesse und Engpässe, in denen KI helfen soll?", rec:"Zwei bis drei zentrale Abläufe auf Zeitfresser und Medienbrüche untersuchen." },
+    { k:"Intelligenz", q:"Ist klar, welche Aufgaben die KI übernimmt – und welche nicht?", rec:"Use Cases sammeln und nach Nutzen und Umsetzbarkeit priorisieren." },
+    { k:"Daten", q:"Sind die nötigen Daten und das Wissen zugänglich, aktuell und freigegeben?", rec:"Daten- und Wissensquellen erfassen und eine Liste freigegebener Tools festlegen." },
+    { k:"Mensch", q:"Wissen Ihre Mitarbeitenden, wie sie mit KI arbeiten – und wer verantwortlich ist?", rec:"Eine KI-Kompetenzschulung für alle aufsetzen und Verantwortliche je Bereich benennen." },
+    { k:"Steuerung", q:"Gibt es Regeln, Kennzahlen und Kontrollen für den KI-Einsatz?", rec:"Eine verständliche KI-Richtlinie mit Freigabeprozess und Erfolgskennzahlen einführen." }
+  ];
+  var lv = ["kaum vorhanden","erste Ansätze","teilweise etabliert","weitgehend etabliert","systematisch verankert"];
+  var stages = [
+    [2, "Erkunden", "KI ist ein Thema, aber noch kein Programm. Der größte Hebel liegt jetzt in Orientierung und einem gemeinsamen Zielbild."],
+    [3, "Experimentieren", "Es gibt erste Versuche, oft verstreut. Jetzt lohnt es sich, Use Cases zu bündeln und Regeln zu schaffen."],
+    [4, "Strukturieren", "Das Fundament steht. Mit klarer Roadmap und Governance lassen sich Piloten in den Regelbetrieb überführen."],
+    [6, "Skalieren", "KI ist Teil des Betriebsmodells. Standardisierte Avatare und Messung machen den nächsten Schritt möglich."]
+  ];
+  var vals = dims.map(function(){ return 3; });
+  var dimsEl = document.getElementById("dims"), heat = document.getElementById("heat");
+  dims.forEach(function(d, i){
+    var w = document.createElement("div"); w.className = "dim";
+    w.innerHTML = "<div class='dim-top'><div><h3>"+d.k+"</h3><p class='q'>"+d.q+"</p></div><output id='o"+i+"'>"+lv[2]+"</output></div>"+
+      "<input type='range' min='1' max='5' step='1' value='3' aria-label='"+d.k+": Reifegrad von 1 bis 5' id='r"+i+"'>"+
+      "<div class='scale' aria-hidden='true'><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>";
+    dimsEl.appendChild(w);
+    w.querySelector("input").addEventListener("input", function(){ vals[i] = +this.value; this.setAttribute("aria-valuetext", lv[vals[i]-1]); update(); });
+    var h = document.createElement("div"); h.className = "heat-row";
+    h.innerHTML = "<span>"+d.k+"</span><div class='bar'><i id='b"+i+"'></i></div><b id='v"+i+"'>3</b>";
+    heat.appendChild(h);
+  });
+  function color(v){ return v<=2 ? "#E6007E" : v===3 ? "#7B2FE0" : "#3B82FF"; }
+  var lastAvg = 3;
+  function update(){
+    var sum = 0;
+    vals.forEach(function(v, i){
+      sum += v;
+      document.getElementById("o"+i).textContent = lv[v-1];
+      var b = document.getElementById("b"+i); b.style.width = (v/5*100)+"%"; b.style.background = color(v);
+      document.getElementById("v"+i).textContent = v;
+    });
+    var avg = sum/vals.length; lastAvg = avg;
+    document.getElementById("score").innerHTML = avg.toFixed(1).replace(".", ",") + "<small>/5</small>";
+    var st = stages.filter(function(s){ return avg < s[0]; })[0];
+    document.getElementById("stage").textContent = st[1];
+    document.getElementById("stageDesc").textContent = st[2];
+    var order = dims.map(function(d, i){ return i; }).sort(function(a, b){ return vals[a]-vals[b] || a-b; }).slice(0,3);
+    document.getElementById("recs").innerHTML = order.map(function(i){ return "<li><strong style='color:var(--text)'>"+dims[i].k+":</strong> "+dims[i].rec+"</li>"; }).join("");
+  }
+  update();
+  document.getElementById("checkCta").addEventListener("click", function(){
+    var sel = document.querySelector("select[name=thema]"); sel.value = "Ergebnis meines KI-Quick-Checks";
+    var lines = dims.map(function(d, i){ return d.k+": "+vals[i]+"/5"; }).join("\n");
+    document.getElementById("msg").value = "Mein KI-Quick-Check: "+lastAvg.toFixed(1).replace(".", ",")+"/5 ("+document.getElementById("stage").textContent+")\n"+lines+"\n\nDarüber möchte ich sprechen:\n";
+  });
+
+  // Kontakt
+  document.querySelectorAll(".mail-out").forEach(function(s){ s.textContent = CONTACT_MAIL; });
+  var form = document.getElementById("form"), fm = document.getElementById("formMsg");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    var f = form.elements;
+    if(!f.name.value.trim() || !/^\S+@\S+\.\S+$/.test(f.email.value)){
+      fm.textContent = "Bitte Name und eine gültige E-Mail-Adresse eintragen."; fm.className = "form-msg err"; return;
+    }
+    fm.textContent = "Ihr E-Mail-Programm öffnet sich mit der vorbereiteten Nachricht."; fm.className = "form-msg";
+    var subject = "Anfrage: " + f.thema.value;
+    var body = "Name: "+f.name.value+"\nUnternehmen: "+f.firma.value+"\nE-Mail: "+f.email.value+"\n\n"+f.nachricht.value;
+    window.location.href = "mailto:"+CONTACT_MAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+  });
+
+  document.querySelectorAll("[data-topic]").forEach(function(b){
+    b.addEventListener("click", function(){ document.querySelector("select[name=thema]").value = b.dataset.topic; });
+  });
+
+  // Dialoge
+  document.querySelectorAll("[data-dlg]").forEach(function(b){
+    b.addEventListener("click", function(){ var d = document.getElementById(b.dataset.dlg); if(d.showModal) d.showModal(); });
+  });
+  document.querySelectorAll("[data-close]").forEach(function(b){ b.addEventListener("click", function(){ b.closest("dialog").close(); }); });
+  document.getElementById("yr").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
